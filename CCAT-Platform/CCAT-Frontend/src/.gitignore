@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Large generated files
+CCAT-Platform/data/abstract_images/
+abstract_scripts/data/abstract_images/
+
+# Node
+CCAT-Platform/CCAT-Frontend/node_modules/
+
+# Environment
+.env
+
+# Zip files
+*.zip
+
+# Old bolt project
+project-bolt-sb1-xmo7qdhs/
+project-bolt-sb1-xmo7qdhs.zip
