@@ -1,0 +1,680 @@
+[
+{
+"id": 1,
+"category": "numerical",
+"difficulty": "easy",
+"question": "If a printer can produce 12 pages per minute, how many pages can it produce in 5 minutes?",
+"options": ["50", "55", "60", "65", "70"],
+"correct_answer": "60",
+"explanation": "Multiply the printing rate by the total time. 12 pages per minute multiplied by 5 minutes equals 60 pages."
+},
+{
+"id": 2,
+"category": "numerical",
+"difficulty": "easy",
+"question": "An item that regularly costs $80 is on sale for 25% off. What is the sale price of the item?",
+"options": ["$55", "$60", "$65", "$70", "$75"],
+"correct_answer": "$60",
+"explanation": "A 25% discount on $80 amounts to $20. Subtracting the savings from the original price leaves a final sale price of $60."
+},
+{
+"id": 3,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A concrete mixture contains cement, sand, and gravel in a 2:3:5 ratio. If a batch contains 30 pounds of sand, what is the total weight of the batch?",
+"options": ["60 pounds", "80 pounds", "100 pounds", "120 pounds", "150 pounds"],
+"correct_answer": "100 pounds",
+"explanation": "Since sand represents 3 parts of the ratio and weighs 30 lbs, each single part equals 10 lbs. The total parts equal 10 (2 + 3 + 5), giving a grand total of 100 lbs."
+},
+{
+"id": 4,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 3, 7, 15, 31, 63, ___?",
+"options": ["95", "125", "127", "129", "131"],
+"correct_answer": "127",
+"explanation": "The pattern requires multiplying the current term by 2 and then adding 1. Applying this rule to the final given number yields 63 x 2 + 1 = 127."
+},
+{
+"id": 5,
+"category": "numerical",
+"difficulty": "hard",
+"question": "Train A leaves a station at 40 mph. One hour later, Train B leaves the same station in the same direction on a parallel track at 50 mph. How many hours after Train B starts will it overtake Train A?",
+"options": ["3 hours", "4 hours", "5 hours", "6 hours", "8 hours"],
+"correct_answer": "4 hours",
+"explanation": "Train A builds an initial 40-mile head start. Train B closes this distance gap at a relative speed of 10 mph (50 - 40), requiring 4 hours to catch up."
+},
+{
+"id": 6,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Evaluate the expression: (24 - 6) / 3 + 4 x 2",
+"options": ["12", "14", "16", "20", "22"],
+"correct_answer": "14",
+"explanation": "Following standard order of operations, evaluate the parentheses to get 18, then perform division and multiplication to get 6 and 8. Adding those values results in 14."
+},
+{
+"id": 7,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A company's quarterly revenue increased from $40,000 to $52,000. What was the percentage increase in revenue?",
+"options": ["20%", "25%", "30%", "35%", "40%"],
+"correct_answer": "30%",
+"explanation": "The nominal increase in quarterly revenue is $12,000. Dividing this growth by the baseline revenue of $40,000 yields a net increase of 30%."
+},
+{
+"id": 8,
+"category": "numerical",
+"difficulty": "easy",
+"question": "The ratio of boys to girls in a classroom is 4:5. If there are 20 boys, how many girls are in the classroom?",
+"options": ["16", "22", "24", "25", "30"],
+"correct_answer": "25",
+"explanation": "The baseline ratio means that 4 parts represent 20 boys, making each structural part worth 5 students. Girls represent 5 parts, totaling 25."
+},
+{
+"id": 9,
+"category": "numerical",
+"difficulty": "easy",
+"question": "What is the next number in the sequence: 4, 9, 14, 19, 24, ___?",
+"options": ["27", "28", "29", "30", "31"],
+"correct_answer": "29",
+"explanation": "The sequence advances at a fixed linear rate, adding 5 to each consecutive term. Increasing the final element by 5 yields 24 + 5 = 29."
+},
+{
+"id": 10,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A pool can be filled by Pipe A in 6 hours and by Pipe B in 12 hours. If both pipes are opened simultaneously, how many hours will it take to fill the pool?",
+"options": ["3 hours", "4 hours", "5 hours", "8 hours", "9 hours"],
+"correct_answer": "4 hours",
+"explanation": "Using the product-over-sum formula for combined operational work rates, calculate (6 x 12) / (6 + 12). This simplifies directly to 72 / 18, which equals 4 hours."
+},
+{
+"id": 11,
+"category": "numerical",
+"difficulty": "hard",
+"question": "Calculate the value of: 0.04 x 0.005",
+"options": ["0.002", "0.0002", "0.00002", "0.02", "0.2"],
+"correct_answer": "0.0002",
+"explanation": "Multiplying the base integers gives 4 x 5 = 20. Shifting the decimal point left by 5 total places to account for both factors yields 0.0002."
+},
+{
+"id": 12,
+"category": "numerical",
+"difficulty": "hard",
+"question": "An investor allocates 40% of his portfolio to stocks and the rest to bonds. If stocks drop by 10% and bonds gain 15%, what is the net percentage change of the total portfolio?",
+"options": ["An increase of 2.5%", "An increase of 5.0%", "An increase of 6.0%", "A decrease of 1.5%", "A decrease of 2.5%"],
+"correct_answer": "An increase of 5.0%",
+"explanation": "Using a hypothetical $100 baseline, stocks lose $4 (10% of $40) and bonds gain $9 (15% of $60). The net combined shift is a gain of $5, or 5.0%."
+},
+{
+"id": 13,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A prize pool is split between two winners in a 7:3 ratio. If the first winner receives $2,100 more than the second winner, what is the total value of the prize pool?",
+"options": ["$3,000", "$4,200", "$4,500", "$5,250", "$6,000"],
+"correct_answer": "$5,250",
+"explanation": "The differential between shares is 4 ratio units (7 - 3), which represents $2,100, making 1 unit worth $525. Multiplying by 10 total parts yields $5,250."
+},
+{
+"id": 14,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 2, 6, 12, 20, 30, ___?",
+"options": ["36", "40", "42", "44", "46"],
+"correct_answer": "42",
+"explanation": "The sequence expands by adding sequential even integers (+4, +6, +8, +10). Following this pattern, add 12 to the last term to find 30 + 12 = 42."
+},
+{
+"id": 15,
+"category": "numerical",
+"difficulty": "medium",
+"question": "An agent sold a piece of equipment for $2,400, making a profit of exactly 20% based on the original wholesale cost. What was the original wholesale cost of the equipment?",
+"options": ["$1,920", "$2,000", "$2,160", "$2,200", "$2,250"],
+"correct_answer": "$2,000",
+"explanation": "The sale price represents 120% of the total wholesale cost. Dividing $2,400 by 1.2 isolates the base investment, which evaluates to exactly $2,000."
+},
+{
+"id": 16,
+"category": "numerical",
+"difficulty": "easy",
+"question": "A stockroom has 150 boxes of paper. If 60 boxes are used during the first week, what percentage of the inventory remains?",
+"options": ["40%", "50%", "60%", "70%", "80%"],
+"correct_answer": "60%",
+"explanation": "The inventory has 90 remaining boxes (150 - 60). Dividing the remaining 90 boxes by the starting 150 total yields 0.60, or exactly 60%."
+},
+{
+"id": 17,
+"category": "numerical",
+"difficulty": "easy",
+"question": "What is the result when 0.75 is multiplied by 800?",
+"options": ["550", "600", "650", "700", "750"],
+"correct_answer": "600",
+"explanation": "Multiplying by 0.75 is identical to finding three-quarters of a value. One-quarter of 800 is 200, so three-quarters is equal to 200 x 3 = 600."
+},
+{
+"id": 18,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A business partnership profit is shared among three stakeholders in a 2:5:8 ratio. If the largest share amounts to $40,000, what is the value of the smallest share?",
+"options": ["$5,000", "$10,000", "$15,000", "$20,000", "$25,000"],
+"correct_answer": "$10,000",
+"explanation": "The largest portion corresponds to 8 ratio parts, meaning 1 part is worth $5,000 ($40,000 / 8). The smallest share is 2 parts, making it 2 x $5,000 = $10,000."
+},
+{
+"id": 19,
+"category": "numerical",
+"difficulty": "easy",
+"question": "What is the next number in the sequence: 80, 40, 20, 10, ___?",
+"options": ["0", "2.5", "5", "7.5", "12.5"],
+"correct_answer": "5",
+"explanation": "Each term in the sequence is determined by dividing the preceding term by 2. Following this rule, 10 / 2 = 5."
+},
+{
+"id": 20,
+"category": "numerical",
+"difficulty": "hard",
+"question": "Production line A assembles 45 units in 3 hours. Line B assembles 30 units in 4 hours. Working simultaneously, how many total units can both lines produce in a 12-hour shift?",
+"options": ["240 units", "270 units", "315 units", "360 units", "400 units"],
+"correct_answer": "270 units",
+"explanation": "In 12 hours, Line A produces 180 units (45 x 4) and Line B produces 90 units (30 x 3). Combining their independent outputs yields 180 + 90 = 270 units."
+},
+{
+"id": 21,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Divide 4.2 by 0.06.",
+"options": ["7", "70", "700", "0.7", "7000"],
+"correct_answer": "70",
+"explanation": "Multiply both values by 100 to clear the decimals, rewriting the expression as 420 / 6. Evaluating this operation results in exactly 70."
+},
+{
+"id": 22,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A retail store marks up the wholesale price of a gadget by 40% to determine its retail price. If the retail price is set at $70, what was the original wholesale price?",
+"options": ["$42", "$48", "$50", "$55", "$60"],
+"correct_answer": "$50",
+"explanation": "The retail price represents 140% of the wholesale cost. Dividing $70 by 1.4 isolates the base price, which evaluates to exactly $50."
+},
+{
+"id": 23,
+"category": "numerical",
+"difficulty": "easy",
+"question": "The scale on blueprints states that 2 inches represents 15 real-world feet. If a wall measures 6 inches on the blueprint, what is its actual real-world length?",
+"options": ["30 feet", "45 feet", "60 feet", "75 feet", "90 feet"],
+"correct_answer": "45 feet",
+"explanation": "The blueprint length of 6 inches is exactly 3 times the base scale unit of 2 inches. Multiplying the real-world scale equivalent by 3 yields 15 x 3 = 45 feet."
+},
+{
+"id": 24,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 2, 3, 5, 8, 12, 17, ___?",
+"options": ["21", "22", "23", "24", "25"],
+"correct_answer": "23",
+"explanation": "The differences between consecutive terms increase by 1 each step (+1, +2, +3, +4, +5). The next added value must be +6, making the next number 17 + 6 = 23."
+},
+{
+"id": 25,
+"category": "numerical",
+"difficulty": "hard",
+"question": "A shipment of 120 writing instruments contains only pens and pencils. If the number of pencils is exactly 24 more than twice the number of pens, how many pens were in the shipment?",
+"options": ["24", "32", "48", "64", "72"],
+"correct_answer": "32",
+"explanation": "Setting up the equation where P is pens: P + (2P + 24) = 120. This simplifies to 3P = 96, which establishes that the number of pens is 32."
+},
+{
+"id": 26,
+"category": "numerical",
+"difficulty": "medium",
+"question": "Find the average of the following values: 14, 21, 25, 28, and 32.",
+"options": ["22", "24", "25", "26", "28"],
+"correct_answer": "24",
+"explanation": "Sum all the given elements together to get a total of 120. Dividing this sum by the total element count of 5 yields an average of 24."
+},
+{
+"id": 27,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A marketing budget of $5,000 is reduced by 10%. The following month, the remaining budget is increased by 20%. What is the final value of the budget?",
+"options": ["$5,200", "$5,400", "$5,500", "$5,600", "$5,800"],
+"correct_answer": "$5,400",
+"explanation": "A 10% reduction leaves a baseline of $4,500 ($5,000 x 0.90). Increasing $4,500 by 20% adds $900, resulting in a final value of $5,400."
+},
+{
+"id": 28,
+"category": "numerical",
+"difficulty": "easy",
+"question": "A liquid mixture requires 3 parts water to 1 part concentrated syrup. If you use 12 cups of water, how many cups of syrup are needed?",
+"options": ["3 cups", "4 cups", "6 cups", "9 cups", "10 cups"],
+"correct_answer": "4 cups",
+"explanation": "The mixture ratio establishes that 3 units equal 12 cups of water, making 1 unit equal to 4 cups. Since syrup requires 1 unit, 4 cups are required."
+},
+{
+"id": 29,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 1, 4, 9, 16, 25, ___?",
+"options": ["30", "34", "36", "49", "50"],
+"correct_answer": "36",
+"explanation": "The sequence follows the values of consecutive perfect squares (1^2, 2^2, 3^2, 4^2, 5^2). The next term is 6^2, which equals 36."
+},
+{
+"id": 30,
+"category": "numerical",
+"difficulty": "hard",
+"question": "Out of 80 configurations, 45% are legacy systems and the rest are modern. If 16 modern configurations require updates, how many modern configurations are fully operational without updates?",
+"options": ["24", "28", "32", "44", "48"],
+"correct_answer": "28",
+"explanation": "Legacy systems comprise 36 configurations (45% of 80), leaving 44 modern systems. Subtracting the 16 systems needing updates leaves 28 fully operational modern configurations."
+},
+{
+"id": 31,
+"category": "numerical",
+"difficulty": "easy",
+"question": "A team consists of 5 engineers and 3 designers. If the company hires 10 more engineers, what will be the new ratio of designers to engineers?",
+"options": ["1:3", "1:5", "3:10", "3:15", "1:2"],
+"correct_answer": "1:5",
+"explanation": "The initial count increases to 15 engineers while designers remain at 3. The new ratio of designers to engineers is 3:15, which simplifies directly to 1:5."
+},
+{
+"id": 32,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 3, 6, 11, 18, 27, ___?",
+"options": ["36", "38", "40", "42", "44"],
+"correct_answer": "38",
+"explanation": "The sequence grows by adding consecutive odd integers starting with 3 (+3, +5, +7, +9). Adding the next odd integer, 11, to the final term gives 27 + 11 = 38."
+},
+{
+"id": 33,
+"category": "numerical",
+"difficulty": "hard",
+"question": "An account accumulates interest at a rate that doubles the balance every 6 years. If the account starts with $5,000, how many years will it take to reach a balance of $80,000?",
+"options": ["18 years", "24 years", "30 years", "36 years", "42 years"],
+"correct_answer": "24 years",
+"explanation": "To grow from $5,000 to $80,000, the baseline balance must double exactly 4 times (10k, 20k, 40k, 80k). Since each doubling cycle requires 6 years, the total time is 4 x 6 = 24 years."
+},
+{
+"id": 34,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Evaluate the expression: 1.5 x 4 + 12 / 0.5",
+"options": ["12", "18", "30", "36", "42"],
+"correct_answer": "30",
+"explanation": "Perform multiplication and division first. 1.5 x 4 equals 6, and 12 divided by 0.5 equals 24. Adding these results together yields 6 + 24 = 30."
+},
+{
+"id": 35,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A technician reduces the data usage of an application by 20%. If the new data usage is 64 megabytes, what was the initial usage?",
+"options": ["72 MB", "76 MB", "80 MB", "84 MB", "90 MB"],
+"correct_answer": "80 MB",
+"explanation": "The new usage represents 80% of the original data footprint. Dividing 64 by 0.80 reverses the compression, returning an initial usage of 80 megabytes."
+},
+{
+"id": 36,
+"category": "numerical",
+"difficulty": "medium",
+"question": "The ratio of passing to failing students on an exam is 7:2. If 14 students failed, what is the total number of students who took the exam?",
+"options": ["49", "56", "63", "81", "90"],
+"correct_answer": "63",
+"explanation": "The ratio dictates that 2 units represent the 14 failing students, meaning 1 unit equals 7 students. The total class size is 9 units (7 + 2), which equals 9 x 7 = 63 students."
+},
+{
+"id": 37,
+"category": "numerical",
+"difficulty": "easy",
+"question": "What is the next number in the sequence: 100, 91, 82, 73, 64, ___?",
+"options": ["53", "55", "56", "58", "60"],
+"correct_answer": "55",
+"explanation": "The terms decrease at a constant rate, subtracting 9 from each consecutive number. Subtracting 9 from the final term yields 64 - 9 = 55."
+},
+{
+"id": 38,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A processing station can handle 8 corporate files every 45 minutes. How many hours will it take for the station to process a batch of 32 corporate files?",
+"options": ["2 hours", "3 hours", "4 hours", "5 hours", "6 hours"],
+"correct_answer": "3 hours",
+"explanation": "Processing 32 files requires exactly 4 times the base workload capacity (32 / 8 = 4). Multiplying 45 minutes by 4 gives 180 minutes, which converts directly to 3 hours."
+},
+{
+"id": 39,
+"category": "numerical",
+"difficulty": "hard",
+"question": "Calculate the exact value of the following expression: (0.3 x 0.3) + (0.4 / 0.02)",
+"options": ["20.09", "20.9", "2.09", "2.9", "200.9"],
+"correct_answer": "20.09",
+"explanation": "First, evaluate the square: 0.3 x 0.3 = 0.09. Next, perform the decimal division: 0.4 / 0.02 = 20. Adding the two independent segments yields 20.09."
+},
+{
+"id": 40,
+"category": "numerical",
+"difficulty": "hard",
+"question": "A commercial property tax increases by 10% in Year 1, and then decreases by 10% in Year 2. If the original tax was $3,000, what is the tax amount after Year 2?",
+"options": ["$2,700", "$2,970", "$3,000", "$3,030", "$3,300"],
+"correct_answer": "$2,970",
+"explanation": "The Year 1 increase raises the tax balance to $3,300 ($3,000 x 1.10). The Year 2 reduction removes 10% of that new value (-$330), leaving a final balance of $2,970."
+},
+{
+"id": 41,
+"category": "numerical",
+"difficulty": "easy",
+"question": "An office recipe for punch uses fruit juice and soda in a 5:2 ratio. If an employee uses 6 cups of soda, how many cups of fruit juice are needed?",
+"options": ["12 cups", "15 cups", "20 cups", "25 cups", "30 cups"],
+"correct_answer": "15 cups",
+"explanation": "The ratio indicates that 2 units correspond to 6 cups of soda, setting 1 unit equal to 3 cups. Multiplying the 5 units of juice by 3 yields 15 cups."
+},
+{
+"id": 42,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 1, 3, 7, 13, 21, ___?",
+"options": ["27", "29", "31", "33", "35"],
+"correct_answer": "31",
+"explanation": "The sequence advances by adding consecutive even integers (+2, +4, +6, +8). Following this operational rule, adding 10 to the last number gives 21 + 10 = 31."
+},
+{
+"id": 43,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A driver completes a 120-mile trip at an average speed of 60 mph. On the return trip along the same route, heavy traffic slows the average speed to 40 mph. What is the driver's total travel time for the entire round trip?",
+"options": ["4 hours", "5 hours", "6 hours", "7 hours", "8 hours"],
+"correct_answer": "5 hours",
+"explanation": "The outbound leg requires 2 hours (120 / 60) and the return leg requires 3 hours (120 / 40). Combining these travel segments yields a total duration of 5 hours."
+},
+{
+"id": 44,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Simplify the following mathematical expression: 45 - (12 + 8) x 2 + 5",
+"options": ["10", "15", "55", "60", "75"],
+"correct_answer": "10",
+"explanation": "Evaluate the parentheses first to get 20, then perform the multiplication step: 20 x 2 = 40. The expression becomes 45 - 40 + 5, which resolves cleanly to 10."
+},
+{
+"id": 45,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A department manager notices that 15% of the 40 scheduled shifts this month were remote. How many shifts were completed on-site?",
+"options": ["6 shifts", "30 shifts", "34 shifts", "36 shifts", "38 shifts"],
+"correct_answer": "34 shifts",
+"explanation": "Remote shifts account for 15% of 40, which evaluates to exactly 6 shifts. Subtracting these remote events from the total schedule leaves 34 on-site shifts."
+},
+{
+"id": 46,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A blueprint uses a scale where 3 inches equals 24 miles. If two communication towers are separated by 7.5 inches on the map, what is their actual distance?",
+"options": ["48 miles", "56 miles", "60 miles", "72 miles", "80 miles"],
+"correct_answer": "60 miles",
+"explanation": "The scale establishes that 1 inch equals 8 miles (24 / 3). Multiplying the map distance by this scale rate yields 7.5 x 8 = 60 miles."
+},
+{
+"id": 47,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 2, 4, 8, 16, 32, ___?",
+"options": ["48", "50", "64", "96", "128"],
+"correct_answer": "64",
+"explanation": "Each term in this geometric sequence is determined by multiplying the previous term by 2. Following this rule, 32 x 2 = 64."
+},
+{
+"id": 48,
+"category": "numerical",
+"difficulty": "hard",
+"question": "An office manager buys a total of 90 markers in red and blue. If the number of blue markers is 6 more than three times the number of red markers, how many blue markers were purchased?",
+"options": ["21", "27", "63", "69", "75"],
+"correct_answer": "69",
+"explanation": "Let R be red markers, so blue is 3R + 6. The total equation is R + 3R + 6 = 90, which simplifies to 4R = 84, meaning R = 21 and blue equals 3(21) + 6 = 69."
+},
+{
+"id": 49,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Calculate the value of: 120 / (4 x 5) - 2",
+"options": ["4", "6", "8", "28", "30"],
+"correct_answer": "4",
+"explanation": "According to the order of operations, evaluate the operations inside the parentheses first: 4 x 5 = 20. Then divide 120 by 20 to get 6, and subtract 2 to yield 4."
+},
+{
+"id": 50,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A commercial property valued at $200,000 loses 10% of its value due to market conditions, but then increases by 10% the following year. What is its final value?",
+"options": ["$198,000", "$200,000", "$202,000", "$220,000", "$240,000"],
+"correct_answer": "$198,000",
+"explanation": "The 10% reduction drops the property value to $180,000 ($200,000 x 0.90). A subsequent 10% increase adds $18,000 ($180,000 x 0.10), resulting in a final value of $198,000."
+},
+[
+{
+"id": 51,
+"category": "numerical",
+"difficulty": "easy",
+"question": "A production line requires a 5:3 ratio of copper to zinc. If a manufacturing batch utilizes 45 pounds of copper, how many pounds of zinc are required?",
+"options": ["15 pounds", "27 pounds", "30 pounds", "75 pounds", "90 pounds"],
+"correct_answer": "27 pounds",
+"explanation": "The ratio indicates that 5 parts equal 45 pounds of copper, making 1 part worth 9 pounds. Multiplying the 3 parts of zinc by 9 yields 27 pounds."
+},
+{
+"id": 52,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 5, 7, 11, 19, 35, ___?",
+"options": ["43", "51", "67", "70", "75"],
+"correct_answer": "67",
+"explanation": "The sequence advances by adding doubling integers at each step (+2, +4, +8, +16). The next increase must be +32, which results in 35 + 32 = 67."
+},
+{
+"id": 53,
+"category": "numerical",
+"difficulty": "hard",
+"question": "Machine A can complete a packaging job in 4 hours, while Machine B can complete the same job in 6 hours. If both machines run together, how many hours will it take to finish the job?",
+"options": ["2.0 hours", "2.4 hours", "2.5 hours", "5.0 hours", "10.0 hours"],
+"correct_answer": "2.4 hours",
+"explanation": "Utilize the product-over-sum formula for combined work rates: (4 x 6) / (4 + 6). This calculates to 24 / 10, which evaluates cleanly to 2.4 hours."
+},
+{
+"id": 54,
+"category": "numerical",
+"difficulty": "easy",
+"question": "What is the result when 0.06 is multiplied by 0.04?",
+"options": ["0.24", "0.024", "0.0024", "0.00024", "0.00240"],
+"correct_answer": "0.0024",
+"explanation": "Multiply the base whole numbers first: 6 x 4 = 24. Since there are 4 total decimal places between the two factors, shift the decimal point left 4 places to get 0.0024."
+},
+{
+"id": 55,
+"category": "numerical",
+"difficulty": "medium",
+"question": "An online store increases the price of a subscription service by 25%. If the new monthly price is $15, what was the original monthly subscription price?",
+"options": ["$11.25", "$12.00", "$12.50", "$13.75", "$14.00"],
+"correct_answer": "$12.00",
+"explanation": "The new price represents 125% of the original cost baseline. Dividing $15 by 1.25 reverses the price hike, revealing an original rate of $12.00."
+},
+{
+"id": 56,
+"category": "numerical",
+"difficulty": "medium",
+"question": "An inheritance of $60,000 is distributed among three siblings in a 1:2:3 ratio. What is the value of the largest individual share?",
+"options": ["$10,000", "$20,000", "$30,000", "$40,000", "$50,000"],
+"correct_answer": "$30,000",
+"explanation": "The total number of ratio units is 6 (1 + 2 + 3), making each unit worth $10,000 ($60,000 / 6). The largest share is 3 units, which equals 3 x $10,000 = $30,000."
+},
+{
+"id": 57,
+"category": "numerical",
+"difficulty": "easy",
+"question": "What is the next number in the sequence: 12, 21, 30, 39, 48, ___?",
+"options": ["51", "54", "57", "60", "66"],
+"correct_answer": "57",
+"explanation": "The sequence increases by a constant arithmetic difference of 9 between successive numbers. Adding 9 to the final term yields 48 + 9 = 57."
+},
+{
+"id": 58,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A corporate vehicle travels at 50 mph for 2 hours, and then increases its speed to 65 mph for the next 2 hours. What was the total distance traveled during this trip?",
+"options": ["115 miles", "215 miles", "230 miles", "260 miles", "300 miles"],
+"correct_answer": "230 miles",
+"explanation": "The vehicle travels 100 miles during the first leg (50 x 2) and 130 miles during the second leg (65 x 2). Combining these segments results in a total distance of 230 miles."
+},
+{
+"id": 59,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Find the average of the following test scores: 65, 75, 80, and 100.",
+"options": ["78", "80", "82", "85", "90"],
+"correct_answer": "80",
+"explanation": "Sum the four test scores together to calculate a total of 320. Dividing this cumulative value by the count of 4 yields an average score of 80."
+},
+{
+"id": 60,
+"category": "numerical",
+"difficulty": "hard",
+"question": "A tech firm spends 60% of its budget on operational expenses and the remainder on research. If the operational expenses are reduced by 15% and research spending increases by 20%, what is the net percent change in the total budget?",
+"options": ["A decrease of 1.0%", "A decrease of 2.0%", "An increase of 1.0%", "An increase of 5.0%", "An increase of 2.5%"],
+"correct_answer": "A decrease of 1.0%",
+"explanation": "Using a $100 budget baseline, operations drop from $60 to $51 (-$9), and research climbs from $40 to $48 (+$8). The combined net change is a loss of $1, which is a 1% decrease."
+},
+{
+"id": 61,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A stock analyst monitors a company portfolio containing 60 assets. If exactly 35% of the assets are tech stocks, how many non-tech assets are in the portfolio?",
+"options": ["21", "35", "39", "42", "45"],
+"correct_answer": "39",
+"explanation": "If tech stocks comprise 35%, then non-tech assets make up the remaining 65% of the portfolio. Multiplying 60 total assets by 0.65 yields exactly 39 non-tech assets."
+},
+{
+"id": 62,
+"category": "numerical",
+"difficulty": "easy",
+"question": "The ratio of working laptops to defective laptops in an office warehouse is 9:2. If there are 18 defective laptops, how many working laptops are available?",
+"options": ["36", "72", "81", "90", "99"],
+"correct_answer": "81",
+"explanation": "The ratio indicates that 2 units correspond to 18 defective laptops, making 1 unit equal to 9 laptops. Multiplying the 9 units of working laptops by 9 yields 81."
+},
+{
+"id": 63,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 100, 50, 60, 30, 40, ___?",
+"options": ["10", "20", "30", "50", "60"],
+"correct_answer": "20",
+"explanation": "The alternating pattern divides by 2, then adds 10, then divides by 2, then adds 10. Following this sequence, dividing the last term by 2 gives 40 / 2 = 20."
+},
+{
+"id": 64,
+"category": "numerical",
+"difficulty": "hard",
+"question": "A courier must deliver a package to an office 15 miles away. If the courier travels at an average speed of 20 mph for the first 10 miles, at what speed must they complete the final 5 miles to average 15 mph for the entire trip?",
+"options": ["8 mph", "10 mph", "12 mph", "15 mph", "18 mph"],
+"correct_answer": "10 mph",
+"explanation": "At 15 mph, a 15-mile trip requires exactly 1 hour. The first 10 miles at 20 mph takes 0.5 hours, leaving 0.5 hours to cover the final 5 miles, which requires a speed of 10 mph (5 / 0.5)."
+},
+{
+"id": 65,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Evaluate the expression: (36 / 4) x 3 - 15 + 6",
+"options": ["12", "15", "18", "21", "24"],
+"correct_answer": "18",
+"explanation": "First evaluate the division within the parentheses to get 9, then multiply by 3 to get 27. Performing the remaining subtraction and addition gives 27 - 15 + 6 = 18."
+},
+{
+"id": 66,
+"category": "numerical",
+"difficulty": "medium",
+"question": "A product's wholesale manufacturing cost rises by 15%. If the new manufacturing cost is $92, what was the original cost?",
+"options": ["$77", "$78", "$80", "$82", "$85"],
+"correct_answer": "$80",
+"explanation": "The new cost represents 115% of the original wholesale price baseline. Dividing $92 by 1.15 reverses the increase, revealing an original cost of $80."
+},
+{
+"id": 67,
+"category": "numerical",
+"difficulty": "easy",
+"question": "A small business allocates its monthly expenses for rent, payroll, and utilities in a 4:5:1 ratio. If utilities cost $800, what is the total monthly expenditure?",
+"options": ["$4,000", "$6,400", "$7,200", "$8,000", "$10,000"],
+"correct_answer": "$8,000",
+"explanation": "Utilities represent 1 part of the ratio, so 1 part equals $800. The total number of ratio parts is 10 (4 + 5 + 1), which means the total expenses are 10 x $800 = $8,000."
+},
+{
+"id": 68,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 1, 5, 14, 30, 55, ___?",
+"options": ["76", "81", "91", "105", "110"],
+"correct_answer": "91",
+"explanation": "The sequence grows by adding successive perfect squares (+4, +9, +16, +25). The next addition must be the next perfect square, +36, which yields 55 + 36 = 91."
+},
+{
+"id": 69,
+"category": "numerical",
+"difficulty": "hard",
+"question": "A large conference room requires exactly twice as many chairs as tables. If the operations manager orders a combined total of 105 pieces of furniture, how many chairs were ordered?",
+"options": ["35", "52", "70", "75", "80"],
+"correct_answer": "70",
+"explanation": "Let T be the number of tables, so chairs equals 2T. The total furniture equation is T + 2T = 105, which simplifies to 3T = 105, meaning T = 35 and chairs equals 2(35) = 70."
+},
+{
+"id": 70,
+"category": "numerical",
+"difficulty": "easy",
+"question": "Divide 0.048 by 0.6.",
+"options": ["0.08", "0.8", "0.008", "8", "0.48"],
+"correct_answer": "0.08",
+"explanation": "Multiply both elements by 10 to clear the denominator's decimal, converting the expression to 0.48 / 6. Evaluating this operation yields exactly 0.08."
+},
+{
+"id": 71,
+"category": "numerical",
+"difficulty": "medium",
+"question": "An online software license regularly priced at $120 is reduced by 20% for a seasonal sale. The following week, a final 10% loyalty discount is applied to the sale price. What is the final cost?",
+"options": ["$84.00", "$86.40", "$88.00", "$96.00", "$100.00"],
+"correct_answer": "$86.40",
+"explanation": "The initial 20% discount reduces the price to $96 ($120 x 0.80). Applying the subsequent 10% loyalty discount to the $96 balance reduces it by $9.60, leaving a final cost of $86.40."
+},
+{
+"id": 72,
+"category": "numerical",
+"difficulty": "easy",
+"question": "A map's legends indicate that 0.5 inches represents 20 real miles. If the distance between two corporate branches measures 4 inches on the map, how many miles apart are they?",
+"options": ["80 miles", "120 miles", "160 miles", "200 miles", "240 miles"],
+"correct_answer": "160 miles",
+"explanation": "Since 0.5 inches represents 20 miles, every full inch represents 40 miles. Multiplying the map distance of 4 inches by 40 yields a real-world distance of 160 miles."
+},
+{
+"id": 73,
+"category": "numerical",
+"difficulty": "medium",
+"question": "What is the next number in the sequence: 9, 11, 15, 23, 39, ___?",
+"options": ["47", "55", "71", "79", "85"],
+"correct_answer": "71",
+"explanation": "The difference between consecutive numbers doubles at each step (+2, +4, +8, +16). The next increase must be +32, which results in a next term of 39 + 32 = 71."
+},
+{
+"id": 74,
+"category": "numerical",
+"difficulty": "hard",
+"question": "An assembly machine finishes 12 units every 40 minutes, while a newer machine finishes 15 units every 30 minutes. Working together, how many total units can both machines complete in exactly 2 hours?",
+"options": ["64 units", "72 units", "96 units", "102 units", "120 units"],
+"correct_answer": "96 units",
+"explanation": "In 2 hours (120 minutes), the first machine runs 3 complete cycles and produces 36 units (12 x 3). The second machine runs 4 complete cycles and produces 60 units (15 x 4). Combined, they produce 36 + 60 = 96 units."
+},
+{
+"id": 75,
+"category": "numerical",
+"difficulty": "medium",
+"question": "Find the average of the following operational data values: 4.5, 6.0, 7.5, 9.0, and 13.0.",
+"options": ["7.5", "8.0", "8.5", "9.0", "10.0"],
+"correct_answer": "8.0",
+"explanation": "Sum the five given numbers together to calculate a cumulative total of 40.0. Dividing this total by the element count of 5 yields a precise average of 8.0."
+}
+]
+
+
