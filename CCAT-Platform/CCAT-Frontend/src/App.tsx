@@ -4,7 +4,7 @@ import type { Question, TestResponse, Screen } from './types';
 
 const TOTAL_QUESTIONS = 50;
 const TEST_DURATION_SECONDS = 15 * 60;
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://ccat-backend-api.onrender.com';
 
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -47,21 +47,36 @@ function App() {
   };
 
   const finishTest = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
     setScreen('results');
   }, []);
 
   useEffect(() => {
-    if (screen === 'test') {
+    if (screen === 'test' && timerRef.current === null) {
       timerRef.current = setInterval(() => {
         setTimeLeft((prev) => {
-          if (prev <= 1) { finishTest(); return 0; }
+          if (prev <= 1) {
+            if (timerRef.current) {
+              clearInterval(timerRef.current);
+              timerRef.current = null;
+            }
+            setScreen('results');
+            return 0;
+          }
           return prev - 1;
         });
       }, 1000);
-      return () => { if (timerRef.current) clearInterval(timerRef.current); };
     }
-  }, [screen, finishTest]);
+    return () => {
+      if (screen !== 'test' && timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [screen]);
 
   const handleAnswer = (option: string) => {
     setAnswers((prev) => ({ ...prev, [questions[currentIndex].uid]: option }));
