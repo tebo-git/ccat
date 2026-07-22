@@ -22,10 +22,16 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showLockModal, setShowLockModal] = useState(false);
+  const [licenseKey, setLicenseKey] = useState('');
+  const [licenseLoading, setLicenseLoading] = useState(false);
+  const [licenseError, setLicenseError] = useState<string | null>(null);
+  const [isUnlocked, setIsUnlocked] = useState(() => {
+    return localStorage.getItem('ccat_unlocked') === 'true';
+  });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startTest = async (testNum: number = 1) => {
-    if (testNum === 2 || testNum === 3) {
+    if ((testNum === 2 || testNum === 3) && !isUnlocked) {
       setShowLockModal(true);
       return;
     }
@@ -44,6 +50,35 @@ function App() {
       setError(e instanceof Error ? e.message : 'Unknown error');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const validateLicense = async () => {
+    if (!licenseKey.trim()) {
+      setLicenseError('Please enter a license key');
+      return;
+    }
+    setLicenseLoading(true);
+    setLicenseError(null);
+    try {
+      const res = await fetch(`${API_BASE}/api/verify-license`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ license_key: licenseKey.trim() })
+      });
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem('ccat_unlocked', 'true');
+        setIsUnlocked(true);
+        setShowLockModal(false);
+        setLicenseError(null);
+      } else {
+        setLicenseError('Invalid license key. Please check and try again.');
+      }
+    } catch (e) {
+      setLicenseError('Could not verify license. Please try again.');
+    } finally {
+      setLicenseLoading(false);
     }
   };
 
@@ -137,13 +172,35 @@ function App() {
               href="https://8396304264007.gumroad.com/l/eakpb"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors mb-3"
+              className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors mb-4"
             >
               Unlock 2 More Tests — $25
             </a>
+
+            <div className="border-t border-slate-100 pt-4 mt-2">
+              <p className="text-xs text-slate-500 mb-2">Already purchased? Enter your license key:</p>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={licenseKey}
+                  onChange={(e) => setLicenseKey(e.target.value)}
+                  placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX"
+                  className="flex-1 px-3 py-2 text-xs border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  onClick={validateLicense}
+                  disabled={licenseLoading}
+                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition-colors disabled:opacity-50"
+                >
+                  {licenseLoading ? '...' : 'Unlock'}
+                </button>
+              </div>
+              {licenseError && <p className="text-red-600 text-xs mt-1">{licenseError}</p>}
+            </div>
+
             <button
               onClick={() => setShowLockModal(false)}
-              className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+              className="text-sm text-slate-500 hover:text-slate-700 transition-colors mt-3"
             >
               Maybe later
             </button>

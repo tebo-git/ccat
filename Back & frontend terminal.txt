@@ -1,0 +1,37 @@
+cd C:\Users\06181151080409425111\Desktop\CCAT\CCAT-Platform
+venv\Scripts\activate
+python -m uvicorn main:app --reload
+
+
+cd C:\Users\06181151080409425111\Desktop\CCAT\CCAT-Platform\CCAT-Frontend
+npm run dev
+
+
+cd C:\Users\06181151080409425111\Desktop\CCAT\CCAT-Platform
+venv\Scripts\activate
+cd C:\Users\06181151080409425111\Desktop\CCAT\abstract_scripts
+python generate_abstract_v2.py
+
+
+
+sample key:
+
+6F0E4C97-B72A4E69-A11BF6C4-AF6517E7
+
+
+product key: 
+
+QTXdEOZxWcOA4N1XVYJPbg==
+
+
+Application ID:
+
+T4IH7R3pSeCAZFYy7o29IqEcClwIhnb7yx1gtFS1NeY
+
+Application Secret:
+
+9POT2R4yH5koIuI5UeCZEYvE-6LaXP4wDbI4nNou8Xk
+
+
+access token:
+0fcCjaOQzZJKG7q4ej-JSAOCV5KUcjMVWCieUydpznA

@@ -22,9 +22,15 @@ from datetime import datetime
 from fastapi.responses import FileResponse
 from typing import List, Optional
 import os
-
+import requests
 
 resend.api_key = "re_W6MpVkyn_4Kn45VhNfcsYkAysj7SNmp5o"
+GUMROAD_ACCESS_TOKEN = "0fcCjaOQzZJKG7q4ej-JSAOCV5KUcjMVWCieUydpznA"
+GUMROAD_PRODUCT_ID = "QTXdEOZxWcOA4N1XVYJPbg=="
+
+
+
+
 
 app = FastAPI()
 
@@ -571,7 +577,29 @@ def generate_pdf_report(req: "EmailRequest") -> bytes:
 
 
 
-
+@app.post("/api/verify-license")
+def verify_license(data: dict):
+    license_key = data.get("license_key", "").strip()
+    if not license_key:
+        return {"success": False, "message": "No license key provided"}
+    
+    try:
+        response = requests.post(
+            "https://api.gumroad.com/v2/licenses/verify",
+            data={
+                "product_id": GUMROAD_PRODUCT_ID,
+                "license_key": license_key,
+                "increment_uses_count": "true"
+            },
+            headers={"Authorization": f"Bearer {GUMROAD_ACCESS_TOKEN}"}
+        )
+        result = response.json()
+        if result.get("success"):
+            return {"success": True, "message": "License key valid"}
+        else:
+            return {"success": False, "message": "Invalid license key"}
+    except Exception as e:
+        return {"success": False, "message": str(e)}
 
 
 
@@ -644,6 +672,9 @@ def send_results(req: EmailRequest):
         return {"success": True, "message": "Results sent successfully"}
     except Exception as e:
         return {"success": False, "message": str(e)}
+
+
+
 
 
 
