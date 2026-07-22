@@ -20,7 +20,7 @@ import base64
 import csv
 from datetime import datetime
 from fastapi.responses import FileResponse
-
+from typing import List, Optional
 
 app = FastAPI()
 
@@ -103,7 +103,8 @@ class ResultItem(BaseModel):
     selected: Optional[str]
     correct_answer: str
     is_correct: bool
-    explanation: str
+    explanation: Optional[str] = ""
+
 
 class EmailRequest(BaseModel):
     email: str
