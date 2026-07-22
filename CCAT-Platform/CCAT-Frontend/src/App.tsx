@@ -223,6 +223,11 @@ function LandingScreen({ onStart, loading, error }: { onStart: (testNum: number)
               <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
               <span>Timer runs continuously — you cannot pause. Answer all questions before time runs out.</span>
             </li>
+
+            <li className="flex items-start gap-2">
+              <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
+              <span>No calculator allowed — all numerical questions are designed to be solved mentally.</span>
+            </li>
           </ul>
         </div>
         {error && <div className="bg-red-50 text-red-700 rounded-xl p-4 mb-6 text-sm">{error}</div>}

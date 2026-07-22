@@ -20,7 +20,9 @@ import base64
 
 
 
-resend.api_key = "re_W6MpVkyn_4Kn45VhNfcsYkAysj7SNmp5o"
+
+
+
 app = FastAPI()
 
 app.add_middleware(
