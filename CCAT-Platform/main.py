@@ -21,6 +21,10 @@ import csv
 from datetime import datetime
 from fastapi.responses import FileResponse
 from typing import List, Optional
+import os
+
+
+resend.api_key = "re_W6MpVkyn_4Kn45VhNfcsYkAysj7SNmp5o"
 
 app = FastAPI()
 
@@ -568,12 +572,6 @@ def generate_pdf_report(req: "EmailRequest") -> bytes:
 
 
 
-
-
-
-
-
-@app.post("/api/send-results")
 
 
 
