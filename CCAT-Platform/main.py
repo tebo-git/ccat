@@ -17,10 +17,9 @@ from reportlab.graphics.shapes import Drawing, Rect, String, Circle
 from reportlab.graphics import renderPDF
 import io
 import base64
-
-
-
-
+import csv
+from datetime import datetime
+from fastapi.responses import FileResponse
 
 
 app = FastAPI()
@@ -574,12 +573,28 @@ def generate_pdf_report(req: "EmailRequest") -> bytes:
 
 
 @app.post("/api/send-results")
+
+
+
+
+
+def save_email_to_csv(email: str, score: int, percentage: int):
+    filepath = "data/email_list.csv"
+    file_exists = os.path.exists(filepath)
+    with open(filepath, "a", newline="") as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(["email", "score", "percentage", "date"])
+        writer.writerow([email, score, percentage, datetime.now().strftime("%Y-%m-%d %H:%M")])
+
+@app.post("/api/send-results")
 def send_results(req: EmailRequest):
     # Generate PDF
     pdf_bytes = generate_pdf_report(req)
     pdf_b64 = base64.b64encode(pdf_bytes).decode("utf-8")
 
     try:
+        # Send results to user (currently hardcoded to your email until domain verified)
         resend.Emails.send({
             "from": "onboarding@resend.dev",
             "to": "ahmedeltayebi270@gmail.com",
@@ -603,7 +618,7 @@ def send_results(req: EmailRequest):
                 <p style="color:#475569; font-size:14px;">Your full performance report is attached as a PDF. It includes your section breakdown, improvement tips, and complete question analysis.</p>
                 <div style="background:#f8fafc; border-radius:8px; padding:16px; margin-top:16px; text-align:center;">
                     <p style="color:#475569; font-size:13px; margin:0 0 12px 0;">Want more practice? Unlock Tests 2 and 3.</p>
-                    <a href="https://gumroad.com" style="background:#2563eb; color:white; padding:10px 24px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:13px;">Unlock Tests 2 &amp; 3 — $5</a>
+                    <a href="https://8396304264007.gumroad.com/l/eakpb" style="background:#2563eb; color:white; padding:10px 24px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:13px;">Unlock 2 More Tests — $25</a>
                 </div>
                 <p style="color:#94a3b8; font-size:11px; text-align:center; margin-top:20px;">Sent by CCAT Practice Platform</p>
             </div>
@@ -615,13 +630,30 @@ def send_results(req: EmailRequest):
                 }
             ]
         })
+
+        # Notify yourself of new signup
+        resend.Emails.send({
+            "from": "onboarding@resend.dev",
+            "to": "ahmedeltayebi270@gmail.com",
+            "subject": f"New CCAT signup: {req.email} — {req.percentage}%",
+            "html": f"<p>New user: <b>{req.email}</b> scored <b>{req.percentage}%</b> ({req.score}/{req.total})</p>"
+        })
+
+        # Save email to CSV
+        save_email_to_csv(req.email, req.score, req.percentage)
+
         return {"success": True, "message": "Results sent successfully"}
     except Exception as e:
         return {"success": False, "message": str(e)}
 
 
 
-
+@app.get("/api/emails")
+def get_emails():
+    filepath = "data/email_list.csv"
+    if not os.path.exists(filepath):
+        return {"message": "No emails collected yet"}
+    return FileResponse(filepath, filename="ccat_emails.csv")
 
 
 # @app.post("/api/send-results")
