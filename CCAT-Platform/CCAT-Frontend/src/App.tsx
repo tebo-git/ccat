@@ -4,8 +4,8 @@ import type { Question, TestResponse, Screen } from './types';
 
 const TOTAL_QUESTIONS = 50;
 const TEST_DURATION_SECONDS = 15 * 60;
-// const API_BASE = 'https://ccat-backend-api.onrender.com'
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://ccat-backend-api.onrender.com';
+// const API_BASE = 'http://127.0.0.1:8000';
 
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
