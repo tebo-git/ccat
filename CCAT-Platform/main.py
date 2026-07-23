@@ -24,7 +24,7 @@ from typing import List, Optional
 import os
 import requests
 
-resend.api_key = "re_W6MpVkyn_4Kn45VhNfcsYkAysj7SNmp5o"
+resend.api_key = "re_cAHcm8BQ_FQYJmyBmhvk8iTLbp84CEUzG"
 GUMROAD_ACCESS_TOKEN = "0fcCjaOQzZJKG7q4ej-JSAOCV5KUcjMVWCieUydpznA"
 GUMROAD_PRODUCT_ID = "QTXdEOZxWcOA4N1XVYJPbg=="
 
