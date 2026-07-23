@@ -623,8 +623,8 @@ def send_results(req: EmailRequest):
     try:
         # Send results to user (currently hardcoded to your email until domain verified)
         resend.Emails.send({
-            "from": "onboarding@resend.dev",
-            "to": "ahmedeltayebi270@gmail.com",
+            "from": "results@prepaptitude.com",
+            "to": req.email,
             "subject": f"Your CCAT Practice Results — {req.percentage}% ({req.score}/{req.total})",
             "html": f"""
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -660,11 +660,12 @@ def send_results(req: EmailRequest):
 
         # Notify yourself of new signup
         resend.Emails.send({
-            "from": "onboarding@resend.dev",
-            "to": "ahmedeltayebi270@gmail.com",
-            "subject": f"New CCAT signup: {req.email} — {req.percentage}%",
-            "html": f"<p>New user: <b>{req.email}</b> scored <b>{req.percentage}%</b> ({req.score}/{req.total})</p>"
-        })
+                    "from": "results@prepaptitude.com",
+                    "to": "ahmedeltayebi270@gmail.com",  # your Gmail
+                    "subject": f"New CCAT signup: {req.email} — {req.percentage}%",
+                    "html": f"<p>New user: <b>{req.email}</b> scored <b>{req.percentage}%</b> ({req.score}/{req.total})</p>"
+                })
+
 
         # Save email to CSV
         save_email_to_csv(req.email, req.score, req.percentage)
