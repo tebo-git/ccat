@@ -151,6 +151,19 @@ function App() {
     };
   }, [screen]);
 
+
+
+// Keep backend awake during test
+  useEffect(() => {
+    if (screen === 'test') {
+      const keepAlive = setInterval(() => {
+        fetch(`${API_BASE}/`).catch(() => {});
+      }, 4 * 60 * 1000);
+      return () => clearInterval(keepAlive);
+    }
+  }, [screen]);
+
+  const handleAnswer = (option: string) => {
   const handleAnswer = (option: string) => {
     setAnswers((prev) => ({ ...prev, [questions[currentIndex].uid]: option }));
   };
@@ -554,6 +567,7 @@ function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount,
     }
     setEmailLoading(true);
     setEmailError(null);
+    try { await fetch(`${API_BASE}/`); } catch {}
     try {
       const payload = {
         email,
