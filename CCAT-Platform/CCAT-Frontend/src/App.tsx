@@ -773,5 +773,6 @@ function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount,
     </div>
   );
 }
+}
 
 export default App;
