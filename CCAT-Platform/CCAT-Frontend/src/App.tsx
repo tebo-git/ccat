@@ -82,6 +82,7 @@ function App() {
       setCurrentIndex(0);
       setTimeLeft(TEST_DURATION_SECONDS);
       setScreen('test');
+      fetch(`${API_BASE}/`).catch(() => {});
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Unknown error');
     } finally {
