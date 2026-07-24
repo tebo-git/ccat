@@ -153,7 +153,7 @@ function App() {
 
 
 
-// Keep backend awake during test
+  // Keep backend awake during test
   useEffect(() => {
     if (screen === 'test') {
       const keepAlive = setInterval(() => {
@@ -163,7 +163,6 @@ function App() {
     }
   }, [screen]);
 
-  const handleAnswer = (option: string) => {
   const handleAnswer = (option: string) => {
     setAnswers((prev) => ({ ...prev, [questions[currentIndex].uid]: option }));
   };
@@ -772,7 +771,6 @@ function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount,
       </main>
     </div>
   );
-}
 }
 
 export default App;
