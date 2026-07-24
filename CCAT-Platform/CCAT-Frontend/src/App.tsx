@@ -2,6 +2,10 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { Timer, CheckCircle, XCircle, Brain, ArrowRight, Play, Clock, BarChart3, ChevronRight, ChevronLeft, Award } from 'lucide-react';
 import type { Question, TestResponse, Screen } from './types';
 
+import verbalBank from './data/verbal_bank.json';
+import numericalBank from './data/numerical_bank.json';
+import abstractBank from './data/abstract_bank.json';
+
 const TOTAL_QUESTIONS = 50;
 const TEST_DURATION_SECONDS = 15 * 60;
 const API_BASE = 'https://ccat-backend-api.onrender.com';
@@ -30,6 +34,40 @@ function App() {
   });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const getQuestionsForTest = (testNum: number): Question[] => {
+    const verbal = verbalBank as Question[];
+    const numerical = numericalBank as Question[];
+    const abstract = abstractBank as Question[];
+
+    // Fix image paths for abstract questions to use local public folder
+    const fixedAbstract = abstract.map(q => ({
+      ...q,
+      uid: `a-${q.id}`,
+      sequence_images: q.sequence_images?.map((p: string) => `/abstract_images/${p.split('/').pop()}`) || [],
+      option_images: q.option_images?.map((p: string) => `/abstract_images/${p.split('/').pop()}`) || [],
+    }));
+
+    // Add uids to verbal and numerical
+    const taggedVerbal = verbal.map(q => ({ ...q, uid: `v-${q.id}` }));
+    const taggedNumerical = numerical.map(q => ({ ...q, uid: `n-${q.id}` }));
+
+    const chunkSize = Math.floor(verbal.length / 3);
+    const start = (testNum - 1) * chunkSize;
+    const end = start + chunkSize;
+
+    const vPool = taggedVerbal.slice(start, end);
+    const nPool = taggedNumerical.slice(start, end);
+    const aPool = fixedAbstract.slice(start, end);
+
+    const combined = [...vPool, ...nPool, ...aPool];
+    // Shuffle
+    for (let i = combined.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [combined[i], combined[j]] = [combined[j], combined[i]];
+    }
+    return combined.slice(0, TOTAL_QUESTIONS);
+  };
+
   const startTest = async (testNum: number = 1) => {
     if ((testNum === 2 || testNum === 3) && !isUnlocked) {
       setShowLockModal(true);
@@ -38,10 +76,8 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`${API_BASE}/api/test?count=${TOTAL_QUESTIONS}&test_num=${testNum}`);
-      if (!res.ok) throw new Error('Failed to fetch questions');
-      const data: TestResponse = await res.json();
-      setQuestions(data.questions);
+      const questions = getQuestionsForTest(testNum);
+      setQuestions(questions);
       setAnswers({});
       setCurrentIndex(0);
       setTimeLeft(TEST_DURATION_SECONDS);
@@ -356,7 +392,7 @@ function AbstractQuestion({ q, selected, onAnswer }: { q: Question; selected: st
           <div className={`grid gap-2 ${q.type === 'matrix_3x3' ? 'grid-cols-3' : 'grid-cols-4'}`}>
             {q.sequence_images.map((src, i) => (
               <div key={i} className="border border-slate-200 rounded-lg bg-white p-1 flex items-center justify-center">
-                <img src={`${API_BASE}${src}`} alt={`Step ${i + 1}`} className="w-16 h-16 sm:w-20 sm:h-20" />
+                <img src={src} alt={`Step ${i + 1}`} className="w-16 h-16 sm:w-20 sm:h-20" />
               </div>
             ))}
           </div>
@@ -379,7 +415,7 @@ function AbstractQuestion({ q, selected, onAnswer }: { q: Question; selected: st
                   : 'border-slate-200 bg-white hover:border-blue-300'
               }`}
             >
-              <img src={`${API_BASE}${src}`} alt={`Option ${label}`} className="w-14 h-14 sm:w-16 sm:h-16" />
+              <img src={src} alt={`Option ${label}`} className="w-14 h-14 sm:w-16 sm:h-16" />
               <span className={`text-xs font-bold ${isSelected ? 'text-blue-700' : 'text-slate-500'}`}>
                 {label}
               </span>
@@ -598,8 +634,10 @@ function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount,
                     {emailLoading ? 'Sending...' : 'See Results'}
                   </button>
                 </div>
+                {emailLoading && (
+  <p className="text-xs text-amber-600 mt-2">⏳ Processing your results, please wait up to 60 seconds...</p>)}
                 {emailError && <p className="text-red-600 text-xs mt-2">{emailError}</p>}
-                <p className="text-xs text-slate-400 mt-3">We'll also email you a copy of your results.</p>
+                <p className="text-xs text-slate-400 mt-3">We'll also email you a copy of your results. This may take up to 60 seconds.</p>
               </div>
             </div>
           ) : (

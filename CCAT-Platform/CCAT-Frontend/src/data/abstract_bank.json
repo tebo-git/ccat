@@ -1,0 +1,1642 @@
+[
+  {
+    "id": 1,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q1_seq1.svg",
+      "data/abstract_images/q1_seq2.svg",
+      "data/abstract_images/q1_seq3.svg",
+      "data/abstract_images/q1_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q1_optA.svg",
+      "data/abstract_images/q1_optB.svg",
+      "data/abstract_images/q1_optC.svg",
+      "data/abstract_images/q1_optD.svg",
+      "data/abstract_images/q1_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sequence cycles through shapes with increasing sides: triangle (3), square (4), pentagon (5), hexagon (6). After hexagon, it cycles back to triangle."
+  },
+  {
+    "id": 2,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q2_seq1.svg",
+      "data/abstract_images/q2_seq2.svg",
+      "data/abstract_images/q2_seq3.svg",
+      "data/abstract_images/q2_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q2_optA.svg",
+      "data/abstract_images/q2_optB.svg",
+      "data/abstract_images/q2_optC.svg",
+      "data/abstract_images/q2_optD.svg",
+      "data/abstract_images/q2_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The sequence cycles through shapes with increasing sides: triangle (3), square (4), pentagon (5), hexagon (6). After hexagon, it cycles back to triangle."
+  },
+  {
+    "id": 3,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q3_seq1.svg",
+      "data/abstract_images/q3_seq2.svg",
+      "data/abstract_images/q3_seq3.svg",
+      "data/abstract_images/q3_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q3_optA.svg",
+      "data/abstract_images/q3_optB.svg",
+      "data/abstract_images/q3_optC.svg",
+      "data/abstract_images/q3_optD.svg",
+      "data/abstract_images/q3_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The sequence cycles through shapes with increasing sides: triangle (3), square (4), pentagon (5), hexagon (6). After hexagon, it cycles back to triangle."
+  },
+  {
+    "id": 4,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q4_seq1.svg",
+      "data/abstract_images/q4_seq2.svg",
+      "data/abstract_images/q4_seq3.svg",
+      "data/abstract_images/q4_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q4_optA.svg",
+      "data/abstract_images/q4_optB.svg",
+      "data/abstract_images/q4_optC.svg",
+      "data/abstract_images/q4_optD.svg",
+      "data/abstract_images/q4_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The sequence cycles through shapes with increasing sides: triangle (3), square (4), pentagon (5), hexagon (6). After hexagon, it cycles back to triangle."
+  },
+  {
+    "id": 5,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q5_seq1.svg",
+      "data/abstract_images/q5_seq2.svg",
+      "data/abstract_images/q5_seq3.svg",
+      "data/abstract_images/q5_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q5_optA.svg",
+      "data/abstract_images/q5_optB.svg",
+      "data/abstract_images/q5_optC.svg",
+      "data/abstract_images/q5_optD.svg",
+      "data/abstract_images/q5_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sequence cycles through shapes with increasing sides: triangle (3), square (4), pentagon (5), hexagon (6). After hexagon, it cycles back to triangle."
+  },
+  {
+    "id": 6,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q6_seq1.svg",
+      "data/abstract_images/q6_seq2.svg",
+      "data/abstract_images/q6_seq3.svg",
+      "data/abstract_images/q6_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q6_optA.svg",
+      "data/abstract_images/q6_optB.svg",
+      "data/abstract_images/q6_optC.svg",
+      "data/abstract_images/q6_optD.svg",
+      "data/abstract_images/q6_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Two rules: shape rotates 90\u00b0 clockwise AND alternates filled/empty each step."
+  },
+  {
+    "id": 7,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q7_seq1.svg",
+      "data/abstract_images/q7_seq2.svg",
+      "data/abstract_images/q7_seq3.svg",
+      "data/abstract_images/q7_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q7_optA.svg",
+      "data/abstract_images/q7_optB.svg",
+      "data/abstract_images/q7_optC.svg",
+      "data/abstract_images/q7_optD.svg",
+      "data/abstract_images/q7_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Two rules: shape rotates 90\u00b0 clockwise AND alternates filled/empty each step."
+  },
+  {
+    "id": 8,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q8_seq1.svg",
+      "data/abstract_images/q8_seq2.svg",
+      "data/abstract_images/q8_seq3.svg",
+      "data/abstract_images/q8_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q8_optA.svg",
+      "data/abstract_images/q8_optB.svg",
+      "data/abstract_images/q8_optC.svg",
+      "data/abstract_images/q8_optD.svg",
+      "data/abstract_images/q8_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Two rules: shape flips 180\u00b0 each step AND fill alternates every two steps."
+  },
+  {
+    "id": 9,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q9_seq1.svg",
+      "data/abstract_images/q9_seq2.svg",
+      "data/abstract_images/q9_seq3.svg",
+      "data/abstract_images/q9_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q9_optA.svg",
+      "data/abstract_images/q9_optB.svg",
+      "data/abstract_images/q9_optC.svg",
+      "data/abstract_images/q9_optD.svg",
+      "data/abstract_images/q9_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Two rules: shape flips 180\u00b0 each step AND fill alternates every two steps."
+  },
+  {
+    "id": 10,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q10_seq1.svg",
+      "data/abstract_images/q10_seq2.svg",
+      "data/abstract_images/q10_seq3.svg",
+      "data/abstract_images/q10_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q10_optA.svg",
+      "data/abstract_images/q10_optB.svg",
+      "data/abstract_images/q10_optC.svg",
+      "data/abstract_images/q10_optD.svg",
+      "data/abstract_images/q10_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Two rules: shape rotates 90\u00b0 clockwise AND alternates filled/empty each step."
+  },
+  {
+    "id": 11,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q11_seq1.svg",
+      "data/abstract_images/q11_seq2.svg",
+      "data/abstract_images/q11_seq3.svg",
+      "data/abstract_images/q11_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q11_optA.svg",
+      "data/abstract_images/q11_optB.svg",
+      "data/abstract_images/q11_optC.svg",
+      "data/abstract_images/q11_optD.svg",
+      "data/abstract_images/q11_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The dot moves clockwise around the corners of the shape."
+  },
+  {
+    "id": 12,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q12_seq1.svg",
+      "data/abstract_images/q12_seq2.svg",
+      "data/abstract_images/q12_seq3.svg",
+      "data/abstract_images/q12_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q12_optA.svg",
+      "data/abstract_images/q12_optB.svg",
+      "data/abstract_images/q12_optC.svg",
+      "data/abstract_images/q12_optD.svg",
+      "data/abstract_images/q12_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "The dot moves clockwise around the corners of the shape."
+  },
+  {
+    "id": 13,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q13_seq1.svg",
+      "data/abstract_images/q13_seq2.svg",
+      "data/abstract_images/q13_seq3.svg",
+      "data/abstract_images/q13_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q13_optA.svg",
+      "data/abstract_images/q13_optB.svg",
+      "data/abstract_images/q13_optC.svg",
+      "data/abstract_images/q13_optD.svg",
+      "data/abstract_images/q13_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "The dot moves clockwise around the corners of the shape."
+  },
+  {
+    "id": 14,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q14_seq1.svg",
+      "data/abstract_images/q14_seq2.svg",
+      "data/abstract_images/q14_seq3.svg",
+      "data/abstract_images/q14_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q14_optA.svg",
+      "data/abstract_images/q14_optB.svg",
+      "data/abstract_images/q14_optC.svg",
+      "data/abstract_images/q14_optD.svg",
+      "data/abstract_images/q14_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The dot moves clockwise around the corners of the shape."
+  },
+  {
+    "id": 15,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q15_seq1.svg",
+      "data/abstract_images/q15_seq2.svg",
+      "data/abstract_images/q15_seq3.svg",
+      "data/abstract_images/q15_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q15_optA.svg",
+      "data/abstract_images/q15_optB.svg",
+      "data/abstract_images/q15_optC.svg",
+      "data/abstract_images/q15_optD.svg",
+      "data/abstract_images/q15_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "The dot moves clockwise around the corners of the shape."
+  },
+  {
+    "id": 16,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q16_seq1.svg",
+      "data/abstract_images/q16_seq2.svg",
+      "data/abstract_images/q16_seq3.svg",
+      "data/abstract_images/q16_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q16_optA.svg",
+      "data/abstract_images/q16_optB.svg",
+      "data/abstract_images/q16_optC.svg",
+      "data/abstract_images/q16_optD.svg",
+      "data/abstract_images/q16_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "The shape grows larger by the same amount each step."
+  },
+  {
+    "id": 17,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q17_seq1.svg",
+      "data/abstract_images/q17_seq2.svg",
+      "data/abstract_images/q17_seq3.svg",
+      "data/abstract_images/q17_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q17_optA.svg",
+      "data/abstract_images/q17_optB.svg",
+      "data/abstract_images/q17_optC.svg",
+      "data/abstract_images/q17_optD.svg",
+      "data/abstract_images/q17_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The shape grows larger by the same amount each step."
+  },
+  {
+    "id": 18,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q18_seq1.svg",
+      "data/abstract_images/q18_seq2.svg",
+      "data/abstract_images/q18_seq3.svg",
+      "data/abstract_images/q18_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q18_optA.svg",
+      "data/abstract_images/q18_optB.svg",
+      "data/abstract_images/q18_optC.svg",
+      "data/abstract_images/q18_optD.svg",
+      "data/abstract_images/q18_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The shape grows larger by the same amount each step."
+  },
+  {
+    "id": 19,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q19_seq1.svg",
+      "data/abstract_images/q19_seq2.svg",
+      "data/abstract_images/q19_seq3.svg",
+      "data/abstract_images/q19_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q19_optA.svg",
+      "data/abstract_images/q19_optB.svg",
+      "data/abstract_images/q19_optC.svg",
+      "data/abstract_images/q19_optD.svg",
+      "data/abstract_images/q19_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The shape grows larger by the same amount each step."
+  },
+  {
+    "id": 20,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q20_seq1.svg",
+      "data/abstract_images/q20_seq2.svg",
+      "data/abstract_images/q20_seq3.svg",
+      "data/abstract_images/q20_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q20_optA.svg",
+      "data/abstract_images/q20_optB.svg",
+      "data/abstract_images/q20_optC.svg",
+      "data/abstract_images/q20_optD.svg",
+      "data/abstract_images/q20_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The shape grows larger by the same amount each step."
+  },
+  {
+    "id": 21,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q21_seq1.svg",
+      "data/abstract_images/q21_seq2.svg",
+      "data/abstract_images/q21_seq3.svg",
+      "data/abstract_images/q21_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q21_optA.svg",
+      "data/abstract_images/q21_optB.svg",
+      "data/abstract_images/q21_optC.svg",
+      "data/abstract_images/q21_optD.svg",
+      "data/abstract_images/q21_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The shape alternates between upright (0\u00b0) and flipped (180\u00b0). After flipped, the next is upright."
+  },
+  {
+    "id": 22,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q22_seq1.svg",
+      "data/abstract_images/q22_seq2.svg",
+      "data/abstract_images/q22_seq3.svg",
+      "data/abstract_images/q22_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q22_optA.svg",
+      "data/abstract_images/q22_optB.svg",
+      "data/abstract_images/q22_optC.svg",
+      "data/abstract_images/q22_optD.svg",
+      "data/abstract_images/q22_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The shape alternates between upright (0\u00b0) and flipped (180\u00b0). After flipped, the next is upright."
+  },
+  {
+    "id": 23,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q23_seq1.svg",
+      "data/abstract_images/q23_seq2.svg",
+      "data/abstract_images/q23_seq3.svg",
+      "data/abstract_images/q23_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q23_optA.svg",
+      "data/abstract_images/q23_optB.svg",
+      "data/abstract_images/q23_optC.svg",
+      "data/abstract_images/q23_optD.svg",
+      "data/abstract_images/q23_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "The shape alternates between upright (0\u00b0) and flipped (180\u00b0). After flipped, the next is upright."
+  },
+  {
+    "id": 24,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q24_seq1.svg",
+      "data/abstract_images/q24_seq2.svg",
+      "data/abstract_images/q24_seq3.svg",
+      "data/abstract_images/q24_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q24_optA.svg",
+      "data/abstract_images/q24_optB.svg",
+      "data/abstract_images/q24_optC.svg",
+      "data/abstract_images/q24_optD.svg",
+      "data/abstract_images/q24_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The shape alternates between pointing left (90\u00b0) and pointing right (270\u00b0)."
+  },
+  {
+    "id": 25,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q25_seq1.svg",
+      "data/abstract_images/q25_seq2.svg",
+      "data/abstract_images/q25_seq3.svg",
+      "data/abstract_images/q25_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q25_optA.svg",
+      "data/abstract_images/q25_optB.svg",
+      "data/abstract_images/q25_optC.svg",
+      "data/abstract_images/q25_optD.svg",
+      "data/abstract_images/q25_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "The shape alternates between pointing left (90\u00b0) and pointing right (270\u00b0)."
+  },
+  {
+    "id": 26,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q26_optA.svg",
+      "data/abstract_images/q26_optB.svg",
+      "data/abstract_images/q26_optC.svg",
+      "data/abstract_images/q26_optD.svg",
+      "data/abstract_images/q26_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Four figures point in the same direction (0\u00b0). One is rotated 90\u00b0 and clearly does not belong."
+  },
+  {
+    "id": 27,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q27_optA.svg",
+      "data/abstract_images/q27_optB.svg",
+      "data/abstract_images/q27_optC.svg",
+      "data/abstract_images/q27_optD.svg",
+      "data/abstract_images/q27_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Four figures point in the same direction (0\u00b0). One is rotated 180\u00b0 and clearly does not belong."
+  },
+  {
+    "id": 28,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q28_optA.svg",
+      "data/abstract_images/q28_optB.svg",
+      "data/abstract_images/q28_optC.svg",
+      "data/abstract_images/q28_optD.svg",
+      "data/abstract_images/q28_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Four figures point in the same direction (0\u00b0). One is rotated 270\u00b0 and clearly does not belong."
+  },
+  {
+    "id": 29,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q29_optA.svg",
+      "data/abstract_images/q29_optB.svg",
+      "data/abstract_images/q29_optC.svg",
+      "data/abstract_images/q29_optD.svg",
+      "data/abstract_images/q29_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Four shapes have the same number of sides. One shape has a different number of sides."
+  },
+  {
+    "id": 30,
+    "category": "abstract",
+    "difficulty": "easy",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q30_optA.svg",
+      "data/abstract_images/q30_optB.svg",
+      "data/abstract_images/q30_optC.svg",
+      "data/abstract_images/q30_optD.svg",
+      "data/abstract_images/q30_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Four shapes have the same number of sides. One shape has a different number of sides."
+  },
+  {
+    "id": 31,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q31_seq1.svg",
+      "data/abstract_images/q31_seq2.svg",
+      "data/abstract_images/q31_seq3.svg",
+      "data/abstract_images/q31_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q31_optA.svg",
+      "data/abstract_images/q31_optB.svg",
+      "data/abstract_images/q31_optC.svg",
+      "data/abstract_images/q31_optD.svg",
+      "data/abstract_images/q31_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The outer shape stays fixed. Each step introduces a new inner shape in sequence."
+  },
+  {
+    "id": 32,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q32_seq1.svg",
+      "data/abstract_images/q32_seq2.svg",
+      "data/abstract_images/q32_seq3.svg",
+      "data/abstract_images/q32_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q32_optA.svg",
+      "data/abstract_images/q32_optB.svg",
+      "data/abstract_images/q32_optC.svg",
+      "data/abstract_images/q32_optD.svg",
+      "data/abstract_images/q32_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "The outer shape stays fixed. Each step introduces a new inner shape in sequence."
+  },
+  {
+    "id": 33,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q33_seq1.svg",
+      "data/abstract_images/q33_seq2.svg",
+      "data/abstract_images/q33_seq3.svg",
+      "data/abstract_images/q33_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q33_optA.svg",
+      "data/abstract_images/q33_optB.svg",
+      "data/abstract_images/q33_optC.svg",
+      "data/abstract_images/q33_optD.svg",
+      "data/abstract_images/q33_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The outer shape stays fixed. Each step introduces a new inner shape in sequence."
+  },
+  {
+    "id": 34,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q34_seq1.svg",
+      "data/abstract_images/q34_seq2.svg",
+      "data/abstract_images/q34_seq3.svg",
+      "data/abstract_images/q34_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q34_optA.svg",
+      "data/abstract_images/q34_optB.svg",
+      "data/abstract_images/q34_optC.svg",
+      "data/abstract_images/q34_optD.svg",
+      "data/abstract_images/q34_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The outer shape stays fixed. Each step introduces a new inner shape in sequence."
+  },
+  {
+    "id": 35,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q35_seq1.svg",
+      "data/abstract_images/q35_seq2.svg",
+      "data/abstract_images/q35_seq3.svg",
+      "data/abstract_images/q35_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q35_optA.svg",
+      "data/abstract_images/q35_optB.svg",
+      "data/abstract_images/q35_optC.svg",
+      "data/abstract_images/q35_optD.svg",
+      "data/abstract_images/q35_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The outer shape stays fixed. Each step introduces a new inner shape in sequence."
+  },
+  {
+    "id": 36,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q36_seq1.svg",
+      "data/abstract_images/q36_seq2.svg",
+      "data/abstract_images/q36_seq3.svg",
+      "data/abstract_images/q36_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q36_optA.svg",
+      "data/abstract_images/q36_optB.svg",
+      "data/abstract_images/q36_optC.svg",
+      "data/abstract_images/q36_optD.svg",
+      "data/abstract_images/q36_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The number of filled cells increases by 2 each step (1, 3, 5, 7...). The next must have all 9 cells filled."
+  },
+  {
+    "id": 37,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q37_seq1.svg",
+      "data/abstract_images/q37_seq2.svg",
+      "data/abstract_images/q37_seq3.svg",
+      "data/abstract_images/q37_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q37_optA.svg",
+      "data/abstract_images/q37_optB.svg",
+      "data/abstract_images/q37_optC.svg",
+      "data/abstract_images/q37_optD.svg",
+      "data/abstract_images/q37_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "The number of filled cells increases by 2 each step (1, 3, 5, 7...). The next must have all 9 cells filled."
+  },
+  {
+    "id": 38,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q38_seq1.svg",
+      "data/abstract_images/q38_seq2.svg",
+      "data/abstract_images/q38_seq3.svg",
+      "data/abstract_images/q38_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q38_optA.svg",
+      "data/abstract_images/q38_optB.svg",
+      "data/abstract_images/q38_optC.svg",
+      "data/abstract_images/q38_optD.svg",
+      "data/abstract_images/q38_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "The number of filled cells increases by 2 each step (1, 3, 5, 7...). The next must have all 9 cells filled."
+  },
+  {
+    "id": 39,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q39_seq1.svg",
+      "data/abstract_images/q39_seq2.svg",
+      "data/abstract_images/q39_seq3.svg",
+      "data/abstract_images/q39_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q39_optA.svg",
+      "data/abstract_images/q39_optB.svg",
+      "data/abstract_images/q39_optC.svg",
+      "data/abstract_images/q39_optD.svg",
+      "data/abstract_images/q39_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "The number of filled cells increases by 2 each step (1, 3, 5, 7...). The next must have all 9 cells filled."
+  },
+  {
+    "id": 40,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q40_seq1.svg",
+      "data/abstract_images/q40_seq2.svg",
+      "data/abstract_images/q40_seq3.svg",
+      "data/abstract_images/q40_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q40_optA.svg",
+      "data/abstract_images/q40_optB.svg",
+      "data/abstract_images/q40_optC.svg",
+      "data/abstract_images/q40_optD.svg",
+      "data/abstract_images/q40_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Two independent rules: the top-left shape rotates 90 degrees each step, while the bottom-right shape grows larger. Both must be correct."
+  },
+  {
+    "id": 41,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q41_seq1.svg",
+      "data/abstract_images/q41_seq2.svg",
+      "data/abstract_images/q41_seq3.svg",
+      "data/abstract_images/q41_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q41_optA.svg",
+      "data/abstract_images/q41_optB.svg",
+      "data/abstract_images/q41_optC.svg",
+      "data/abstract_images/q41_optD.svg",
+      "data/abstract_images/q41_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Two independent rules: the top-left shape rotates 90 degrees each step, while the bottom-right shape grows larger. Both must be correct."
+  },
+  {
+    "id": 42,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q42_seq1.svg",
+      "data/abstract_images/q42_seq2.svg",
+      "data/abstract_images/q42_seq3.svg",
+      "data/abstract_images/q42_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q42_optA.svg",
+      "data/abstract_images/q42_optB.svg",
+      "data/abstract_images/q42_optC.svg",
+      "data/abstract_images/q42_optD.svg",
+      "data/abstract_images/q42_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Two independent rules: the top-left shape rotates 90 degrees each step, while the bottom-right shape grows larger. Both must be correct."
+  },
+  {
+    "id": 43,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q43_seq1.svg",
+      "data/abstract_images/q43_seq2.svg",
+      "data/abstract_images/q43_seq3.svg",
+      "data/abstract_images/q43_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q43_optA.svg",
+      "data/abstract_images/q43_optB.svg",
+      "data/abstract_images/q43_optC.svg",
+      "data/abstract_images/q43_optD.svg",
+      "data/abstract_images/q43_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Two independent rules: the top-left shape rotates 90 degrees each step, while the bottom-right shape grows larger. Both must be correct."
+  },
+  {
+    "id": 44,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q44_seq1.svg",
+      "data/abstract_images/q44_seq2.svg",
+      "data/abstract_images/q44_seq3.svg",
+      "data/abstract_images/q44_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q44_optA.svg",
+      "data/abstract_images/q44_optB.svg",
+      "data/abstract_images/q44_optC.svg",
+      "data/abstract_images/q44_optD.svg",
+      "data/abstract_images/q44_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Two independent rules: the top-left shape rotates 90 degrees each step, while the bottom-right shape grows larger. Both must be correct."
+  },
+  {
+    "id": 45,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q45_optA.svg",
+      "data/abstract_images/q45_optB.svg",
+      "data/abstract_images/q45_optC.svg",
+      "data/abstract_images/q45_optD.svg",
+      "data/abstract_images/q45_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Four figures share the same outer and inner shape combination. One has a different inner shape."
+  },
+  {
+    "id": 46,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q46_optA.svg",
+      "data/abstract_images/q46_optB.svg",
+      "data/abstract_images/q46_optC.svg",
+      "data/abstract_images/q46_optD.svg",
+      "data/abstract_images/q46_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Four figures share the same outer and inner shape combination. One has a different inner shape."
+  },
+  {
+    "id": 47,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q47_optA.svg",
+      "data/abstract_images/q47_optB.svg",
+      "data/abstract_images/q47_optC.svg",
+      "data/abstract_images/q47_optD.svg",
+      "data/abstract_images/q47_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "Four figures share the same outer and inner shape combination. One has a different inner shape."
+  },
+  {
+    "id": 48,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q48_optA.svg",
+      "data/abstract_images/q48_optB.svg",
+      "data/abstract_images/q48_optC.svg",
+      "data/abstract_images/q48_optD.svg",
+      "data/abstract_images/q48_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Four figures share the same outer and inner shape combination. One has a different inner shape."
+  },
+  {
+    "id": 49,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q49_optA.svg",
+      "data/abstract_images/q49_optB.svg",
+      "data/abstract_images/q49_optC.svg",
+      "data/abstract_images/q49_optD.svg",
+      "data/abstract_images/q49_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "Four figures share the same outer and inner shape combination. One has a different inner shape."
+  },
+  {
+    "id": 50,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q50_optA.svg",
+      "data/abstract_images/q50_optB.svg",
+      "data/abstract_images/q50_optC.svg",
+      "data/abstract_images/q50_optD.svg",
+      "data/abstract_images/q50_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "All figures share the same shape and color but one is oriented differently."
+  },
+  {
+    "id": 51,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q51_optA.svg",
+      "data/abstract_images/q51_optB.svg",
+      "data/abstract_images/q51_optC.svg",
+      "data/abstract_images/q51_optD.svg",
+      "data/abstract_images/q51_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "All figures share the same shape and color but one is oriented differently."
+  },
+  {
+    "id": 52,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q52_optA.svg",
+      "data/abstract_images/q52_optB.svg",
+      "data/abstract_images/q52_optC.svg",
+      "data/abstract_images/q52_optD.svg",
+      "data/abstract_images/q52_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "All figures share the same shape and color but one is oriented differently."
+  },
+  {
+    "id": 53,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q53_seq1.svg",
+      "data/abstract_images/q53_seq2.svg",
+      "data/abstract_images/q53_seq3.svg",
+      "data/abstract_images/q53_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q53_optA.svg",
+      "data/abstract_images/q53_optB.svg",
+      "data/abstract_images/q53_optC.svg",
+      "data/abstract_images/q53_optD.svg",
+      "data/abstract_images/q53_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "The shape moves across the frame in a consistent direction. Track the position to find where it ends up next."
+  },
+  {
+    "id": 54,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q54_seq1.svg",
+      "data/abstract_images/q54_seq2.svg",
+      "data/abstract_images/q54_seq3.svg",
+      "data/abstract_images/q54_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q54_optA.svg",
+      "data/abstract_images/q54_optB.svg",
+      "data/abstract_images/q54_optC.svg",
+      "data/abstract_images/q54_optD.svg",
+      "data/abstract_images/q54_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "The shape moves across the frame in a consistent direction. Track the position to find where it ends up next."
+  },
+  {
+    "id": 55,
+    "category": "abstract",
+    "difficulty": "medium",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q55_seq1.svg",
+      "data/abstract_images/q55_seq2.svg",
+      "data/abstract_images/q55_seq3.svg",
+      "data/abstract_images/q55_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q55_optA.svg",
+      "data/abstract_images/q55_optB.svg",
+      "data/abstract_images/q55_optC.svg",
+      "data/abstract_images/q55_optD.svg",
+      "data/abstract_images/q55_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "The shape moves across the frame in a consistent direction. Track the position to find where it ends up next."
+  },
+  {
+    "id": 56,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q56_cell1.svg",
+      "data/abstract_images/q56_cell2.svg",
+      "data/abstract_images/q56_cell3.svg",
+      "data/abstract_images/q56_cell4.svg",
+      "data/abstract_images/q56_cell5.svg",
+      "data/abstract_images/q56_cell6.svg",
+      "data/abstract_images/q56_cell7.svg",
+      "data/abstract_images/q56_cell8_missing.svg",
+      "data/abstract_images/q56_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q56_optA.svg",
+      "data/abstract_images/q56_optB.svg",
+      "data/abstract_images/q56_optC.svg",
+      "data/abstract_images/q56_optD.svg",
+      "data/abstract_images/q56_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Each column uses a different shape. Each row uses a different rotation (0, 90, 180 degrees). The missing piece must match both its row and column rules."
+  },
+  {
+    "id": 57,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q57_cell1_missing.svg",
+      "data/abstract_images/q57_cell2.svg",
+      "data/abstract_images/q57_cell3.svg",
+      "data/abstract_images/q57_cell4.svg",
+      "data/abstract_images/q57_cell5.svg",
+      "data/abstract_images/q57_cell6.svg",
+      "data/abstract_images/q57_cell7.svg",
+      "data/abstract_images/q57_cell8.svg",
+      "data/abstract_images/q57_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q57_optA.svg",
+      "data/abstract_images/q57_optB.svg",
+      "data/abstract_images/q57_optC.svg",
+      "data/abstract_images/q57_optD.svg",
+      "data/abstract_images/q57_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Each column uses a different shape. Each row uses a different rotation (0, 90, 180 degrees). The missing piece must match both its row and column rules."
+  },
+  {
+    "id": 58,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q58_cell1.svg",
+      "data/abstract_images/q58_cell2.svg",
+      "data/abstract_images/q58_cell3.svg",
+      "data/abstract_images/q58_cell4.svg",
+      "data/abstract_images/q58_cell5.svg",
+      "data/abstract_images/q58_cell6.svg",
+      "data/abstract_images/q58_cell7.svg",
+      "data/abstract_images/q58_cell8_missing.svg",
+      "data/abstract_images/q58_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q58_optA.svg",
+      "data/abstract_images/q58_optB.svg",
+      "data/abstract_images/q58_optC.svg",
+      "data/abstract_images/q58_optD.svg",
+      "data/abstract_images/q58_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Each column uses a different shape. Each row uses a different rotation (0, 90, 180 degrees). The missing piece must match both its row and column rules."
+  },
+  {
+    "id": 59,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q59_cell1.svg",
+      "data/abstract_images/q59_cell2.svg",
+      "data/abstract_images/q59_cell3_missing.svg",
+      "data/abstract_images/q59_cell4.svg",
+      "data/abstract_images/q59_cell5.svg",
+      "data/abstract_images/q59_cell6.svg",
+      "data/abstract_images/q59_cell7.svg",
+      "data/abstract_images/q59_cell8.svg",
+      "data/abstract_images/q59_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q59_optA.svg",
+      "data/abstract_images/q59_optB.svg",
+      "data/abstract_images/q59_optC.svg",
+      "data/abstract_images/q59_optD.svg",
+      "data/abstract_images/q59_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Each column uses a different shape. Each row uses a different rotation (0, 90, 180 degrees). The missing piece must match both its row and column rules."
+  },
+  {
+    "id": 60,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q60_cell1.svg",
+      "data/abstract_images/q60_cell2.svg",
+      "data/abstract_images/q60_cell3_missing.svg",
+      "data/abstract_images/q60_cell4.svg",
+      "data/abstract_images/q60_cell5.svg",
+      "data/abstract_images/q60_cell6.svg",
+      "data/abstract_images/q60_cell7.svg",
+      "data/abstract_images/q60_cell8.svg",
+      "data/abstract_images/q60_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q60_optA.svg",
+      "data/abstract_images/q60_optB.svg",
+      "data/abstract_images/q60_optC.svg",
+      "data/abstract_images/q60_optD.svg",
+      "data/abstract_images/q60_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "Each column uses a different shape. Each row uses a different rotation (0, 90, 180 degrees). The missing piece must match both its row and column rules."
+  },
+  {
+    "id": 61,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q61_cell1.svg",
+      "data/abstract_images/q61_cell2.svg",
+      "data/abstract_images/q61_cell3.svg",
+      "data/abstract_images/q61_cell4.svg",
+      "data/abstract_images/q61_cell5_missing.svg",
+      "data/abstract_images/q61_cell6.svg",
+      "data/abstract_images/q61_cell7.svg",
+      "data/abstract_images/q61_cell8.svg",
+      "data/abstract_images/q61_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q61_optA.svg",
+      "data/abstract_images/q61_optB.svg",
+      "data/abstract_images/q61_optC.svg",
+      "data/abstract_images/q61_optD.svg",
+      "data/abstract_images/q61_optE.svg"
+    ],
+    "correct_answer": "E",
+    "explanation": "Each column determines the size (small, medium, large). Each row determines the fill (empty, grey, colored). Find the intersection."
+  },
+  {
+    "id": 62,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q62_cell1.svg",
+      "data/abstract_images/q62_cell2.svg",
+      "data/abstract_images/q62_cell3.svg",
+      "data/abstract_images/q62_cell4.svg",
+      "data/abstract_images/q62_cell5.svg",
+      "data/abstract_images/q62_cell6_missing.svg",
+      "data/abstract_images/q62_cell7.svg",
+      "data/abstract_images/q62_cell8.svg",
+      "data/abstract_images/q62_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q62_optA.svg",
+      "data/abstract_images/q62_optB.svg",
+      "data/abstract_images/q62_optC.svg",
+      "data/abstract_images/q62_optD.svg",
+      "data/abstract_images/q62_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Each column determines the size (small, medium, large). Each row determines the fill (empty, grey, colored). Find the intersection."
+  },
+  {
+    "id": 63,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q63_cell1.svg",
+      "data/abstract_images/q63_cell2.svg",
+      "data/abstract_images/q63_cell3_missing.svg",
+      "data/abstract_images/q63_cell4.svg",
+      "data/abstract_images/q63_cell5.svg",
+      "data/abstract_images/q63_cell6.svg",
+      "data/abstract_images/q63_cell7.svg",
+      "data/abstract_images/q63_cell8.svg",
+      "data/abstract_images/q63_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q63_optA.svg",
+      "data/abstract_images/q63_optB.svg",
+      "data/abstract_images/q63_optC.svg",
+      "data/abstract_images/q63_optD.svg",
+      "data/abstract_images/q63_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Each column determines the size (small, medium, large). Each row determines the fill (empty, grey, colored). Find the intersection."
+  },
+  {
+    "id": 64,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q64_cell1.svg",
+      "data/abstract_images/q64_cell2.svg",
+      "data/abstract_images/q64_cell3.svg",
+      "data/abstract_images/q64_cell4_missing.svg",
+      "data/abstract_images/q64_cell5.svg",
+      "data/abstract_images/q64_cell6.svg",
+      "data/abstract_images/q64_cell7.svg",
+      "data/abstract_images/q64_cell8.svg",
+      "data/abstract_images/q64_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q64_optA.svg",
+      "data/abstract_images/q64_optB.svg",
+      "data/abstract_images/q64_optC.svg",
+      "data/abstract_images/q64_optD.svg",
+      "data/abstract_images/q64_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Each column determines the size (small, medium, large). Each row determines the fill (empty, grey, colored). Find the intersection."
+  },
+  {
+    "id": 65,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q65_cell1.svg",
+      "data/abstract_images/q65_cell2.svg",
+      "data/abstract_images/q65_cell3.svg",
+      "data/abstract_images/q65_cell4.svg",
+      "data/abstract_images/q65_cell5.svg",
+      "data/abstract_images/q65_cell6.svg",
+      "data/abstract_images/q65_cell7_missing.svg",
+      "data/abstract_images/q65_cell8.svg",
+      "data/abstract_images/q65_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q65_optA.svg",
+      "data/abstract_images/q65_optB.svg",
+      "data/abstract_images/q65_optC.svg",
+      "data/abstract_images/q65_optD.svg",
+      "data/abstract_images/q65_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Each column determines the size (small, medium, large). Each row determines the fill (empty, grey, colored). Find the intersection."
+  },
+  {
+    "id": 66,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q66_seq1.svg",
+      "data/abstract_images/q66_seq2.svg",
+      "data/abstract_images/q66_seq3.svg",
+      "data/abstract_images/q66_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q66_optA.svg",
+      "data/abstract_images/q66_optB.svg",
+      "data/abstract_images/q66_optC.svg",
+      "data/abstract_images/q66_optD.svg",
+      "data/abstract_images/q66_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Three rules operate simultaneously: shapes cycle in sequence, rotation increases 90 degrees each step, and fill alternates filled/empty. All three must match."
+  },
+  {
+    "id": 67,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q67_seq1.svg",
+      "data/abstract_images/q67_seq2.svg",
+      "data/abstract_images/q67_seq3.svg",
+      "data/abstract_images/q67_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q67_optA.svg",
+      "data/abstract_images/q67_optB.svg",
+      "data/abstract_images/q67_optC.svg",
+      "data/abstract_images/q67_optD.svg",
+      "data/abstract_images/q67_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Three rules operate simultaneously: shapes cycle in sequence, rotation increases 90 degrees each step, and fill alternates filled/empty. All three must match."
+  },
+  {
+    "id": 68,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q68_seq1.svg",
+      "data/abstract_images/q68_seq2.svg",
+      "data/abstract_images/q68_seq3.svg",
+      "data/abstract_images/q68_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q68_optA.svg",
+      "data/abstract_images/q68_optB.svg",
+      "data/abstract_images/q68_optC.svg",
+      "data/abstract_images/q68_optD.svg",
+      "data/abstract_images/q68_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Three rules operate simultaneously: shapes cycle in sequence, rotation increases 90 degrees each step, and fill alternates filled/empty. All three must match."
+  },
+  {
+    "id": 69,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q69_seq1.svg",
+      "data/abstract_images/q69_seq2.svg",
+      "data/abstract_images/q69_seq3.svg",
+      "data/abstract_images/q69_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q69_optA.svg",
+      "data/abstract_images/q69_optB.svg",
+      "data/abstract_images/q69_optC.svg",
+      "data/abstract_images/q69_optD.svg",
+      "data/abstract_images/q69_optE.svg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Two independent rules: the outer shape rotates 90 degrees clockwise each step, while the inner shape alternates between two orientations. Track both independently."
+  },
+  {
+    "id": 70,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q70_seq1.svg",
+      "data/abstract_images/q70_seq2.svg",
+      "data/abstract_images/q70_seq3.svg",
+      "data/abstract_images/q70_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q70_optA.svg",
+      "data/abstract_images/q70_optB.svg",
+      "data/abstract_images/q70_optC.svg",
+      "data/abstract_images/q70_optD.svg",
+      "data/abstract_images/q70_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Two independent rules: the outer shape rotates 90 degrees clockwise each step, while the inner shape alternates between two orientations. Track both independently."
+  },
+  {
+    "id": 71,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q71_seq1.svg",
+      "data/abstract_images/q71_seq2.svg",
+      "data/abstract_images/q71_seq3.svg",
+      "data/abstract_images/q71_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q71_optA.svg",
+      "data/abstract_images/q71_optB.svg",
+      "data/abstract_images/q71_optC.svg",
+      "data/abstract_images/q71_optD.svg",
+      "data/abstract_images/q71_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Two independent rules: the outer shape rotates 90 degrees clockwise each step, while the inner shape alternates between two orientations. Track both independently."
+  },
+  {
+    "id": 72,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "next_in_series",
+    "question": "Which figure comes next in the series?",
+    "sequence_images": [
+      "data/abstract_images/q72_seq1.svg",
+      "data/abstract_images/q72_seq2.svg",
+      "data/abstract_images/q72_seq3.svg",
+      "data/abstract_images/q72_seq4.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q72_optA.svg",
+      "data/abstract_images/q72_optB.svg",
+      "data/abstract_images/q72_optC.svg",
+      "data/abstract_images/q72_optD.svg",
+      "data/abstract_images/q72_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Two independent rules: the outer shape rotates 90 degrees clockwise each step, while the inner shape alternates between two orientations. Track both independently."
+  },
+  {
+    "id": 73,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q73_cell1.svg",
+      "data/abstract_images/q73_cell2.svg",
+      "data/abstract_images/q73_cell3.svg",
+      "data/abstract_images/q73_cell4.svg",
+      "data/abstract_images/q73_cell5.svg",
+      "data/abstract_images/q73_cell6.svg",
+      "data/abstract_images/q73_cell7.svg",
+      "data/abstract_images/q73_cell8.svg",
+      "data/abstract_images/q73_cell9_missing.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q73_optA.svg",
+      "data/abstract_images/q73_optB.svg",
+      "data/abstract_images/q73_optC.svg",
+      "data/abstract_images/q73_optD.svg",
+      "data/abstract_images/q73_optE.svg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Each column determines the outer shape. Each row determines the inner shape. Find the combination that satisfies both the row and column of the missing cell."
+  },
+  {
+    "id": 74,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "matrix_3x3",
+    "question": "Which figure completes the 3x3 matrix?",
+    "sequence_images": [
+      "data/abstract_images/q74_cell1.svg",
+      "data/abstract_images/q74_cell2.svg",
+      "data/abstract_images/q74_cell3.svg",
+      "data/abstract_images/q74_cell4.svg",
+      "data/abstract_images/q74_cell5_missing.svg",
+      "data/abstract_images/q74_cell6.svg",
+      "data/abstract_images/q74_cell7.svg",
+      "data/abstract_images/q74_cell8.svg",
+      "data/abstract_images/q74_cell9.svg"
+    ],
+    "option_images": [
+      "data/abstract_images/q74_optA.svg",
+      "data/abstract_images/q74_optB.svg",
+      "data/abstract_images/q74_optC.svg",
+      "data/abstract_images/q74_optD.svg",
+      "data/abstract_images/q74_optE.svg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Each column determines the outer shape. Each row determines the inner shape. Find the combination that satisfies both the row and column of the missing cell."
+  },
+  {
+    "id": 75,
+    "category": "abstract",
+    "difficulty": "hard",
+    "type": "odd_one_out",
+    "question": "Which figure does NOT belong with the others?",
+    "sequence_images": [],
+    "option_images": [
+      "data/abstract_images/q75_optA.svg",
+      "data/abstract_images/q75_optB.svg",
+      "data/abstract_images/q75_optC.svg",
+      "data/abstract_images/q75_optD.svg",
+      "data/abstract_images/q75_optE.svg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Four figures share the same orientation and fill. One figure differs in both rotation and fill -- it breaks two rules simultaneously."
+  }
+]
