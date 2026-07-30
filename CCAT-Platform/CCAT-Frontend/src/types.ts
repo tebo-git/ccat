@@ -1,5 +1,7 @@
 export type Screen = 'landing' | 'test' | 'results';
 
+export type TestMode = 'quick' | 'full';
+
 export interface Question {
   uid: string;
   id: number;

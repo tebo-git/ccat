@@ -1,15 +1,43 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Timer, CheckCircle, XCircle, Brain, ArrowRight, Play, Clock, BarChart3, ChevronRight, ChevronLeft, Award } from 'lucide-react';
-import type { Question, TestResponse, Screen } from './types';
+import { Timer, CheckCircle, XCircle, Brain, ArrowRight, Play, Clock, BarChart3, ChevronRight, ChevronLeft, Award, Zap, Lock } from 'lucide-react';
+import type { Question, TestResponse, Screen, TestMode } from './types';
 
 import verbalBank from './data/verbal_bank.json';
 import numericalBank from './data/numerical_bank.json';
 import abstractBank from './data/abstract_bank.json';
 
-const TOTAL_QUESTIONS = 50;
-const TEST_DURATION_SECONDS = 15 * 60;
+const FULL_QUESTIONS = 50;
+const FULL_DURATION_SECONDS = 15 * 60;
+
+// Quick test: 3 verbal + 3 numerical + 3 abstract, reserved from the tail of each
+// bank so it never overlaps with the three full tests.
+const QUICK_PER_CATEGORY = 3;
+const QUICK_QUESTIONS = QUICK_PER_CATEGORY * 3;
+const QUICK_DURATION_SECONDS = 3 * 60;
+
+// Each bank has 75 questions. Full tests use indices 0..71 (24 per test per
+// category); indices 72..74 are reserved for the quick test.
+const FULL_CHUNK_SIZE = 24;
+
+const GUMROAD_URL = 'https://8396304264007.gumroad.com/l/eakpb';
 const API_BASE = 'https://ccat-backend-api.onrender.com';
 // const API_BASE = 'http://127.0.0.1:8000';
+
+type TrackParams = Record<string, string | number | boolean>;
+
+function track(name: string, params: TrackParams = {}) {
+  const w = window as unknown as { gtag?: (...a: unknown[]) => void };
+  if (typeof w.gtag === 'function') w.gtag('event', name, params);
+}
+
+function shuffle<T>(arr: T[]): T[] {
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
 
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -19,10 +47,11 @@ function formatTime(seconds: number): string {
 
 function App() {
   const [screen, setScreen] = useState<Screen>('landing');
+  const [mode, setMode] = useState<TestMode>('quick');
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [timeLeft, setTimeLeft] = useState(TEST_DURATION_SECONDS);
+  const [timeLeft, setTimeLeft] = useState(QUICK_DURATION_SECONDS);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showLockModal, setShowLockModal] = useState(false);
@@ -34,55 +63,68 @@ function App() {
   });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const getQuestionsForTest = (testNum: number): Question[] => {
-    const verbal = verbalBank as Question[];
-    const numerical = numericalBank as Question[];
-    const abstract = abstractBank as Question[];
-
-    // Fix image paths for abstract questions to use local public folder
-    const fixedAbstract = abstract.map(q => ({
+  // Tag every bank once and normalise abstract image paths to the public folder.
+  const getBanks = () => {
+    const taggedVerbal = (verbalBank as Question[]).map(q => ({ ...q, uid: `v-${q.id}` }));
+    const taggedNumerical = (numericalBank as Question[]).map(q => ({ ...q, uid: `n-${q.id}` }));
+    const fixedAbstract = (abstractBank as Question[]).map(q => ({
       ...q,
       uid: `a-${q.id}`,
       sequence_images: q.sequence_images?.map((p: string) => `/abstract_images/${p.split('/').pop()}`) || [],
       option_images: q.option_images?.map((p: string) => `/abstract_images/${p.split('/').pop()}`) || [],
     }));
-
-    // Add uids to verbal and numerical
-    const taggedVerbal = verbal.map(q => ({ ...q, uid: `v-${q.id}` }));
-    const taggedNumerical = numerical.map(q => ({ ...q, uid: `n-${q.id}` }));
-
-    const chunkSize = Math.floor(verbal.length / 3);
-    const start = (testNum - 1) * chunkSize;
-    const end = start + chunkSize;
-
-    const vPool = taggedVerbal.slice(start, end);
-    const nPool = taggedNumerical.slice(start, end);
-    const aPool = fixedAbstract.slice(start, end);
-
-    const combined = [...vPool, ...nPool, ...aPool];
-    // Shuffle
-    for (let i = combined.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [combined[i], combined[j]] = [combined[j], combined[i]];
-    }
-    return combined.slice(0, TOTAL_QUESTIONS);
+    return { taggedVerbal, taggedNumerical, fixedAbstract };
   };
 
-  const startTest = async (testNum: number = 1) => {
-    if ((testNum === 2 || testNum === 3) && !isUnlocked) {
+  // Quick test: fixed 3/3/3 from the reserved tail of each bank, presented in a
+  // deliberate order so the abstract questions (the differentiator) appear early.
+  const getQuickQuestions = (): Question[] => {
+    const { taggedVerbal, taggedNumerical, fixedAbstract } = getBanks();
+    const tail = (arr: Question[]) => shuffle(arr.slice(FULL_CHUNK_SIZE * 3)).slice(0, QUICK_PER_CATEGORY);
+
+    const v = tail(taggedVerbal);
+    const n = tail(taggedNumerical);
+    const a = tail(fixedAbstract);
+
+    return [v[0], n[0], a[0], v[1], n[1], a[1], v[2], n[2], a[2]].filter(Boolean);
+  };
+
+  const getFullQuestions = (testNum: number): Question[] => {
+    const { taggedVerbal, taggedNumerical, fixedAbstract } = getBanks();
+    const start = (testNum - 1) * FULL_CHUNK_SIZE;
+    const end = start + FULL_CHUNK_SIZE;
+
+    const combined = [
+      ...taggedVerbal.slice(start, end),
+      ...taggedNumerical.slice(start, end),
+      ...fixedAbstract.slice(start, end),
+    ];
+    return shuffle(combined).slice(0, FULL_QUESTIONS);
+  };
+
+  const startTest = async (testMode: TestMode, testNum: number = 1) => {
+    if (testMode === 'full' && (testNum === 2 || testNum === 3) && !isUnlocked) {
+      track('paywall_shown', { test_number: testNum });
       setShowLockModal(true);
       return;
     }
+
+    // Fire before any async work so we still count users who bail during load.
+    track('test_start', { test_mode: testMode, test_number: testNum });
+
     setLoading(true);
     setError(null);
     try {
-      const questions = getQuestionsForTest(testNum);
-      setQuestions(questions);
+      const picked = testMode === 'quick' ? getQuickQuestions() : getFullQuestions(testNum);
+      setMode(testMode);
+      setQuestions(picked);
       setAnswers({});
       setCurrentIndex(0);
-      setTimeLeft(TEST_DURATION_SECONDS);
+      setTimeLeft(testMode === 'quick' ? QUICK_DURATION_SECONDS : FULL_DURATION_SECONDS);
       setScreen('test');
-      fetch(`${API_BASE}/`).catch(() => {});
+      // Only the full test needs the backend (email + PDF). Skip the cold-start
+      // ping on the quick test so first-touch is entirely client-side.
+      if (testMode === 'full') fetch(`${API_BASE}/`).catch(() => {});
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Unknown error');
     } finally {
@@ -124,8 +166,13 @@ function App() {
       clearInterval(timerRef.current);
       timerRef.current = null;
     }
+    track('test_complete', {
+      test_mode: mode,
+      answered: Object.keys(answers).length,
+      total: questions.length,
+    });
     setScreen('results');
-  }, []);
+  }, [mode, answers, questions.length]);
 
   useEffect(() => {
     if (screen === 'test' && timerRef.current === null) {
@@ -155,16 +202,22 @@ function App() {
 
   // Keep backend awake during test
   useEffect(() => {
-    if (screen === 'test') {
+    if (screen === 'test' && mode === 'full') {
       const keepAlive = setInterval(() => {
         fetch(`${API_BASE}/`).catch(() => {});
       }, 4 * 60 * 1000);
       return () => clearInterval(keepAlive);
     }
-  }, [screen]);
+  }, [screen, mode]);
 
   const handleAnswer = (option: string) => {
-    setAnswers((prev) => ({ ...prev, [questions[currentIndex].uid]: option }));
+    const q = questions[currentIndex];
+    track('question_answered', {
+      test_mode: mode,
+      question_index: currentIndex + 1,
+      section: q.category,
+    });
+    setAnswers((prev) => ({ ...prev, [q.uid]: option }));
   };
 
   const handleNext = () => {
@@ -181,10 +234,20 @@ function App() {
     return { question: q, selected, isCorrect: selected === q.correct_answer };
   });
 
+  const totalQuestions = questions.length;
   const correctCount = results.filter((r) => r.isCorrect).length;
   const incorrectCount = results.filter((r) => r.selected !== null && !r.isCorrect).length;
-  const unansweredCount = TOTAL_QUESTIONS - correctCount - incorrectCount;
-  const percentage = Math.round((correctCount / TOTAL_QUESTIONS) * 100);
+  const unansweredCount = totalQuestions - correctCount - incorrectCount;
+  const percentage = totalQuestions ? Math.round((correctCount / totalQuestions) * 100) : 0;
+
+  const sectionBreakdown = ['verbal', 'numerical', 'abstract'].map((section) => {
+    const rows = results.filter((r) => r.question.category === section);
+    return {
+      section,
+      correct: rows.filter((r) => r.isCorrect).length,
+      total: rows.length,
+    };
+  }).filter((s) => s.total > 0);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -218,12 +281,13 @@ function App() {
               </li>
             </ul>
             <a
-              href="https://8396304264007.gumroad.com/l/eakpb"
+              href={GUMROAD_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track('gumroad_click', { placement: 'modal' })}
               className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors mb-4"
             >
-              Unlock 2 More Tests — $25
+              Unlock 2 More Tests for $25
             </a>
 
             <div className="border-t border-slate-100 pt-4 mt-2">
@@ -257,7 +321,9 @@ function App() {
         </div>
       )}
 
-      {screen === 'landing' && <LandingScreen onStart={startTest} loading={loading} error={error} />}
+      {screen === 'landing' && (
+        <LandingScreen onStart={startTest} loading={loading} error={error} isUnlocked={isUnlocked} />
+      )}
       {screen === 'test' && (
         <TestScreen
           questions={questions}
@@ -272,119 +338,161 @@ function App() {
       )}
       {screen === 'results' && (
         <ResultsScreen
+          mode={mode}
           results={results}
           correctCount={correctCount}
           incorrectCount={incorrectCount}
           unansweredCount={unansweredCount}
           percentage={percentage}
+          sectionBreakdown={sectionBreakdown}
           onRestart={() => setScreen('landing')}
+          onStartFull={() => startTest('full', 1)}
         />
       )}
     </div>
   );
 }
 
-function LandingScreen({ onStart, loading, error }: { onStart: (testNum: number) => void; loading: boolean; error: string | null }) {
+function LandingScreen({ onStart, loading, error, isUnlocked }: {
+  onStart: (mode: TestMode, testNum?: number) => void;
+  loading: boolean;
+  error: string | null;
+  isUnlocked: boolean;
+}) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4">
-      <div className="max-w-2xl w-full text-center">
-        <div className="mb-8 flex justify-center">
-          <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-            <Brain className="w-10 h-10 text-white" />
+    <div className="min-h-screen">
+      <div className="max-w-2xl w-full mx-auto px-4 pt-8 pb-16 sm:pt-12">
+
+        {/* ---------- ABOVE THE FOLD ---------- */}
+        <div className="text-center">
+          <div className="mb-5 flex justify-center">
+            <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <Brain className="w-7 h-7 text-white" />
+            </div>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 leading-tight">
+            Free CCAT Practice Test
+          </h1>
+          <p className="text-base sm:text-lg text-slate-600 mb-7">
+            Real CCAT-style questions across verbal, numerical and abstract reasoning.
+            No signup needed.
+          </p>
+
+          {error && (
+            <div className="bg-red-50 text-red-700 rounded-xl p-4 mb-5 text-sm text-left">{error}</div>
+          )}
+
+          {/* Primary CTA: quick test */}
+          <button
+            onClick={() => onStart('quick')}
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-lg px-6 py-4 rounded-xl transition-colors disabled:opacity-50 shadow-md"
+          >
+            <Zap className="w-5 h-5" />
+            <span>Start Free Mini Test</span>
+          </button>
+          <p className="text-sm text-slate-500 mt-2.5">
+            {QUICK_QUESTIONS} questions &middot; 3 minutes &middot; instant score
+          </p>
+
+          {/* Secondary CTA: full test, also free */}
+          <button
+            onClick={() => onStart('full', 1)}
+            disabled={loading}
+            className="mt-5 w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors disabled:opacity-50 shadow-md"
+          >
+            <Play className="w-5 h-5" />
+            <span>Take the Full Free Test</span>
+          </button>
+          <p className="text-sm text-slate-500 mt-2.5">
+            {FULL_QUESTIONS} questions &middot; 15 minutes &middot; emailed PDF report
+          </p>
+        </div>
+
+        {/* ---------- BELOW THE FOLD ---------- */}
+        <div className="grid grid-cols-3 gap-3 mt-12">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+            <div className="flex items-center justify-center mb-2">
+              <BarChart3 className="w-5 h-5 text-blue-600" />
+            </div>
+            <div className="text-xl font-bold text-slate-900">{FULL_QUESTIONS}</div>
+            <div className="text-xs text-slate-500">Questions</div>
+          </div>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+            <div className="flex items-center justify-center mb-2">
+              <Clock className="w-5 h-5 text-blue-600" />
+            </div>
+            <div className="text-xl font-bold text-slate-900">15</div>
+            <div className="text-xs text-slate-500">Minutes</div>
+          </div>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+            <div className="flex items-center justify-center mb-2">
+              <Award className="w-5 h-5 text-blue-600" />
+            </div>
+            <div className="text-xl font-bold text-slate-900">3</div>
+            <div className="text-xs text-slate-500">Categories</div>
           </div>
         </div>
-        <h1 className="text-4xl font-bold text-slate-900 mb-3">CCAT Aptitude Test</h1>
-        <p className="text-lg text-slate-600 mb-10">
-          Assess your verbal, numerical and abstract reasoning skills with this comprehensive aptitude test.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
-            <div className="flex items-center justify-center mb-3">
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-blue-600" />
-              </div>
-            </div>
-            <div className="text-2xl font-bold text-slate-900">50</div>
-            <div className="text-sm text-slate-500">Questions</div>
-          </div>
-          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
-            <div className="flex items-center justify-center mb-3">
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 text-blue-600" />
-              </div>
-            </div>
-            <div className="text-2xl font-bold text-slate-900">15</div>
-            <div className="text-sm text-slate-500">Minutes</div>
-          </div>
-          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
-            <div className="flex items-center justify-center mb-3">
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                <Award className="w-5 h-5 text-blue-600" />
-              </div>
-            </div>
-            <div className="text-2xl font-bold text-slate-900">3</div>
-            <div className="text-sm text-slate-500">Categories</div>
-          </div>
-        </div>
-        <div className="bg-blue-50 rounded-xl p-5 mb-10 text-left">
-          <h3 className="font-semibold text-blue-900 mb-2">Test Overview</h3>
+
+        <div className="bg-blue-50 rounded-xl p-5 mt-6 text-left">
+          <h2 className="font-semibold text-blue-900 mb-3">What the full test covers</h2>
           <ul className="space-y-2 text-sm text-blue-800">
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
-              <span>Verbal reasoning — evaluate arguments, identify assumptions, and draw conclusions.</span>
+              <span>Verbal reasoning: evaluate arguments, identify assumptions, and draw conclusions.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
-              <span>Numerical reasoning — interpret data, solve word problems, and calculate percentages.</span>
+              <span>Numerical reasoning: interpret data, solve word problems, and calculate percentages.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
-              <span>Abstract reasoning — identify patterns, complete sequences, and solve visual matrices.</span>
+              <span>Abstract reasoning: identify patterns, complete sequences, and solve visual matrices.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
-              <span>Timer runs continuously — you cannot pause. Answer all questions before time runs out.</span>
+              <span>The timer runs continuously and cannot be paused, exactly like the real CCAT.</span>
             </li>
-
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
-              <span>No calculator allowed — all numerical questions are designed to be solved mentally.</span>
+              <span>No calculator: every numerical question is solvable mentally.</span>
             </li>
           </ul>
         </div>
-        {error && <div className="bg-red-50 text-red-700 rounded-xl p-4 mb-6 text-sm">{error}</div>}
-        <div className="space-y-3">
-          <p className="text-sm text-slate-500 font-medium">Choose a practice test:</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <button
-              onClick={() => onStart(1)}
-              disabled={loading}
-              className="flex flex-col items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-4 rounded-xl transition-colors disabled:opacity-50 shadow-sm"
-            >
-              <Play className="w-5 h-5" />
-              <span>Test 1</span>
-              <span className="text-xs font-normal opacity-80">Free</span>
-            </button>
-            <button
-              onClick={() => onStart(2)}
-              disabled={loading}
-              className="flex flex-col items-center gap-1 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-6 py-4 rounded-xl border border-slate-200 transition-colors disabled:opacity-50 shadow-sm"
-            >
-              <Play className="w-5 h-5" />
-              <span>Test 2</span>
-              <span className="text-xs font-normal text-slate-400">Full Practice</span>
-            </button>
-            <button
-              onClick={() => onStart(3)}
-              disabled={loading}
-              className="flex flex-col items-center gap-1 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-6 py-4 rounded-xl border border-slate-200 transition-colors disabled:opacity-50 shadow-sm"
-            >
-              <Play className="w-5 h-5" />
-              <span>Test 3</span>
-              <span className="text-xs font-normal text-slate-400">Full Practice</span>
-            </button>
+
+        {/* Paid tests: informational only, no competing CTA */}
+        <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex items-center gap-2 min-w-0">
+              <Lock className="w-4 h-4 text-slate-400 shrink-0" />
+              <p className="text-sm text-slate-500">
+                {isUnlocked ? 'Your unlocked practice tests' : 'Two more full practice tests — $25'}
+              </p>
+            </div>
+            <div className="flex gap-2 shrink-0">
+              {[2, 3].map((n) => (
+                <button
+                  key={n}
+                  onClick={() => onStart('full', n)}
+                  disabled={loading}
+                  title={isUnlocked ? `Start Full Test ${n}` : `Full Test ${n} (locked)`}
+                  className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg border transition-colors disabled:opacity-50 shadow-sm ${
+                    isUnlocked
+                      ? 'bg-emerald-600 hover:bg-emerald-700 border-emerald-600 text-white'
+                      : 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-600'
+                  }`}
+                >
+                  {isUnlocked
+                    ? <Play className="w-4 h-4 shrink-0" />
+                    : <Lock className="w-4 h-4 shrink-0" />}
+                  <span>Full Test {n}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );
@@ -546,16 +654,21 @@ function TestScreen({ questions, currentIndex, answers, timeLeft, onAnswer, onNe
   );
 }
 
-function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount, percentage, onRestart }: {
+function ResultsScreen({ mode, results, correctCount, incorrectCount, unansweredCount, percentage, sectionBreakdown, onRestart, onStartFull }: {
+  mode: TestMode;
   results: { question: Question; selected: string | null; isCorrect: boolean }[];
   correctCount: number;
   incorrectCount: number;
   unansweredCount: number;
   percentage: number;
+  sectionBreakdown: { section: string; correct: number; total: number }[];
   onRestart: () => void;
+  onStartFull: () => void;
 }) {
+  const isQuick = mode === 'quick';
   const [email, setEmail] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
+  // Quick mode has no email gate: the score is shown immediately.
+  const [emailSent, setEmailSent] = useState(isQuick);
   const [emailLoading, setEmailLoading] = useState(false);
   const [emailError, setEmailError] = useState<string | null>(null);
 
@@ -589,6 +702,7 @@ function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount,
       });
       const data = await res.json();
       if (data.success) {
+        track('email_submitted', { test_mode: mode });
         setEmailSent(true);
       } else {
         setEmailError(data.message || 'Failed to send email');
@@ -691,25 +805,71 @@ function ResultsScreen({ results, correctCount, incorrectCount, unansweredCount,
                 </div>
               </div>
 
-              {/* Email sent confirmation */}
-              <div className="bg-emerald-50 rounded-xl border border-emerald-100 p-4 flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                <p className="text-sm text-emerald-800">Results sent to <strong>{email}</strong>. Check your inbox for your full breakdown.</p>
-              </div>
+              {/* Section breakdown */}
+              {sectionBreakdown.length > 0 && (
+                <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                  <h3 className="font-bold text-slate-900 mb-4">By section</h3>
+                  <div className="space-y-3">
+                    {sectionBreakdown.map((s) => {
+                      const pct = s.total ? Math.round((s.correct / s.total) * 100) : 0;
+                      return (
+                        <div key={s.section}>
+                          <div className="flex items-center justify-between text-sm mb-1">
+                            <span className="capitalize font-medium text-slate-700">{s.section}</span>
+                            <span className="text-slate-500">{s.correct} / {s.total}</span>
+                          </div>
+                          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div
+                              className={`h-full rounded-full ${pct >= 60 ? 'bg-emerald-500' : pct >= 40 ? 'bg-amber-500' : 'bg-red-500'}`}
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
-              {/* Upsell */}
-              <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 text-center">
-                <h3 className="font-bold text-slate-900 mb-2">Want more practice?</h3>
-                <p className="text-sm text-slate-600 mb-4">Get two more full-length practice tests with detailed PDF results for just $25.</p>
-                <a
-                  href="https://8396304264007.gumroad.com/l/eakpb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-                >
-                  Unlock 2 More Tests — $25
-                </a>
-              </div>
+              {/* Email sent confirmation (full test only) */}
+              {!isQuick && (
+                <div className="bg-emerald-50 rounded-xl border border-emerald-100 p-4 flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <p className="text-sm text-emerald-800">Results sent to <strong>{email}</strong>. Check your inbox for your full breakdown.</p>
+                </div>
+              )}
+
+              {/* Next step: quick test pushes to the full free test, full test pushes to paid */}
+              {isQuick ? (
+                <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 text-center">
+                  <h3 className="font-bold text-slate-900 mb-2">That was the warm-up</h3>
+                  <p className="text-sm text-slate-600 mb-4">
+                    The real CCAT is {FULL_QUESTIONS} questions in 15 minutes. Take the full free test
+                    to see how you hold up under time pressure and get a PDF report.
+                  </p>
+                  <button
+                    onClick={() => { track('quick_to_full_click'); onStartFull(); }}
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                  >
+                    <Play className="w-4 h-4" />
+                    Take the full free test
+                  </button>
+                </div>
+              ) : (
+                <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 text-center">
+                  <h3 className="font-bold text-slate-900 mb-2">Want more practice?</h3>
+                  <p className="text-sm text-slate-600 mb-4">Get two more full-length practice tests with detailed PDF results for just $25.</p>
+                  <a
+                    href={GUMROAD_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track('gumroad_click', { placement: 'results' })}
+                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                  >
+                    Unlock 2 More Tests for $25
+                  </a>
+                </div>
+              )}
 
               {/* Question Breakdown */}
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-8">
